@@ -6,7 +6,7 @@ namespace tinyrpc {
 void StringUtil::SplitStrToMap(const std::string& str, const std::string& split_str,
         const std::string& joiner, std::map<std::string, std::string>& res) {
     if (str.empty() || split_str.empty() || joiner.empty()) {
-        DebugLog << "str or slpit_str or joiner_str is empty";
+        DebugLog << "str or split_str or joiner_str is empty";
         return;
     }
 

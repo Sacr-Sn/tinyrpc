@@ -70,6 +70,19 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
-    }
+        "variant": "cpp",
+        "any": "cpp",
+        "bitset": "cpp",
+        "set": "cpp",
+        "unordered_set": "cpp",
+        "csignal": "cpp",
+        "fstream": "cpp",
+        "*.inc": "cpp"
+    },
+    "cSpell.words": [
+        "SIGSTKFLT",
+        "timewheel",
+        "tinypb",
+        "tinyrpc"
+    ]
 }

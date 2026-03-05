@@ -1,12 +1,12 @@
+#include <assert.h>
 #include <dlfcn.h>
 #include <fcntl.h>
 #include <string.h>
-#include <assert.h>
 
+#include "config.h"
 #include "coroutine_hook.h"
-#include "../comm/config.h"
-#include "../net/fd_event.h"
-#include "../net/timer.h"
+#include "fd_event.h"
+#include "timer.h"
 
 /**
  * 核心机制：函数指针获取
@@ -18,9 +18,8 @@
  *  g_sys_write_fun - 原始 write
  *  g_sys_connect_fun - 原始 connect
  *  g_sys_sleep_fun - 原始 sleep
-*/
+ */
 #define HOOK_SYS_FUNC(name) name##_fun_ptr_t g_sys_##name##_fun = (name##_fun_ptr_t)dlsym(RTLD_NEXT, #name);
-
 
 HOOK_SYS_FUNC(read);
 HOOK_SYS_FUNC(write);
@@ -35,47 +34,43 @@ extern tinyrpc::Config::ptr gRpcConfig;
 static bool g_hook = true;  // 全局hook开关
 
 // 用于开启或关闭hook机制
-void SetHook(bool value) {
-    g_hook = value;
-}
+void SetHook(bool value) { g_hook = value; }
 
 /**
  * 将文件描述符事件注册到epoll
-*/
+ */
 void toEpoll(tinyrpc::FdEvent::ptr fd_event, int events) {
-    tinyrpc::Coroutine* cur_cor = tinyrpc::Coroutine::GetCurrentCoroutine();  // 获取当前协程指针
+    tinyrpc::Coroutine *cur_cor = tinyrpc::Coroutine::GetCurrentCoroutine();  // 获取当前协程指针
     if (events & tinyrpc::IOEvent::READ) {
         // 将协程设置到FdEvent中
         // 根据事件类型(READ/WRITE)添加监听事件
         // FdEvent会自动调用updateToReactor()注册到epoll
-        // TOEDIT
-        std::cout << "[toEpoll] : fd[" << fd_event->getFd() << "], register read event to epoll" << std::endl;
+        DebugLog << "fd[" << fd_event->getFd() << "], register read event to epoll";
         fd_event->setCoroutine(cur_cor);
         fd_event->addListenEvents(tinyrpc::IOEvent::READ);
     }
     if (events & tinyrpc::IOEvent::WRITE) {
-        // TOEDIT
-        std::cout << "[toEpoll] : fd[" << fd_event->getFd() << "], register write event to epoll" << std::endl;
+        DebugLog << "fd[" << fd_event->getFd() << "], register write event to epoll";
         fd_event->setCoroutine(cur_cor);
         fd_event->addListenEvents(tinyrpc::IOEvent::WRITE);
     }
 }
 
 ssize_t read_hook(int fd, void *buf, size_t count) {
-    // TOEDIT
-    std::cout << "[read_hook] : thisis hook read" << std::endl;
+    DebugLog << "this is hook read";
     // 如果在主协程，直接调用原始系统调用
     if (tinyrpc::Coroutine::IsMainCoroutine()) {
-        // TOEDIT
-        std::cout << "[read_hook] : hook disable, call sys read func" << std::endl;
-        return g_sys_read_fun(fd, buf, count);
+        DebugLog << "hook disable, call sys read func";
+        ssize_t n = g_sys_read_fun(fd, buf, count);
+        DebugLog << "main coroutine read, read bytes: " << n;
+        return n;
     }
 
     /**
      * 获取当前线程的Reactor
      * 从FdEventContainer中获取对应的FdEvent
      * 如果FdEvent没有关联Reactor，设置当前Reactor
-    */
+     */
     tinyrpc::Reactor::GetReactor();
     tinyrpc::FdEvent::ptr fd_event = tinyrpc::FdEventContainer::GetFdContainer()->getFdEvent(fd);
     if (fd_event->getReactor() == nullptr) {
@@ -87,14 +82,15 @@ ssize_t read_hook(int fd, void *buf, size_t count) {
 
     // 尝试立即读取，如果读取成功，直接返回，这样可以避免不必要的协程切换
     ssize_t n = g_sys_read_fun(fd, buf, count);
+    DebugLog << "Attempted to read immediately, bytes read: " << n;
     if (n > 0) {
-        return;
+        DebugLog << "Read success, bytes: " << n;
+        return n;
     }
 
     // 不能立即读取，需要阻塞，则注册事件并yield让出协程
     toEpoll(fd_event, tinyrpc::IOEvent::READ);
-    // TOEDIT
-    std::cout << "[read_hook] : read func to yield" << std::endl;
+    DebugLog << "read func to yield";
     tinyrpc::Coroutine::Yield();
 
     // 恢复后清理：删除监听事件；清除协程关联
@@ -102,20 +98,52 @@ ssize_t read_hook(int fd, void *buf, size_t count) {
     fd_event->clearCoroutine();
 
     // 再次读取：协程恢复后，再次调用原始read
-    // TOEDIT
-    std::cout << "[read_hook] : read func yield back, now to call sys read" << std::endl;
-    return g_sys_read_fun(fd, buf, count);
+    DebugLog << "read func yield back, now to call sys read";
+    n = g_sys_read_fun(fd, buf, count);
+    DebugLog << "After yield, bytes read: " << n;
+    return n;
 }
 
+// ssize_t write_hook(int fd, const void *buf, size_t count) {
+//     DebugLog << "this is hook write";
+//     if (tinyrpc::Coroutine::IsMainCoroutine()) {
+//         std::cout << "[write_hook] : hook disable, call sys write func" << std::endl;
+//         return g_sys_write_fun(fd, buf, count);
+//     }
+
+//     tinyrpc::Reactor::GetReactor();
+//     tinyrpc::FdEvent::ptr fd_event = tinyrpc::FdEventContainer::GetFdContainer()->getFdEvent(fd);
+//     if (fd_event->getReactor() == nullptr) {
+//         fd_event->setReactor(tinyrpc::Reactor::GetReactor());
+//     }
+
+//     fd_event->setNonBlock();
+
+//     ssize_t n = g_sys_write_fun(fd, buf, count);
+//     if (n > 0) {
+//         return n;
+//     }
+
+//     toEpoll(fd_event, tinyrpc::IOEvent::WRITE);
+//     DebugLog << "write func to yield";
+//     std::cout << "[write_hook] : " << std::endl;
+//     tinyrpc::Coroutine::Yield();
+
+//     fd_event->delListenEvents(tinyrpc::IOEvent::WRITE);
+//     fd_event->clearCoroutine();
+
+//     DebugLog << "write func yield back, now to call sys write";
+//     return g_sys_write_fun(fd, buf, count);
+// }
 ssize_t write_hook(int fd, const void *buf, size_t count) {
-    // TOEDIT
-    std::cout << "[write_hook] : this is hook write" << std::endl;
+    DebugLog << "this is hook write";
     if (tinyrpc::Coroutine::IsMainCoroutine()) {
-        std::cout << "[write_hook] : hook disable, call sys write func" << std::endl;
+        DebugLog << "hook disable, call sys write func";
         return g_sys_write_fun(fd, buf, count);
     }
-
     tinyrpc::Reactor::GetReactor();
+    // assert(reactor != nullptr);
+
     tinyrpc::FdEvent::ptr fd_event = tinyrpc::FdEventContainer::GetFdContainer()->getFdEvent(fd);
     if (fd_event->getReactor() == nullptr) {
         fd_event->setReactor(tinyrpc::Reactor::GetReactor());
@@ -129,49 +157,44 @@ ssize_t write_hook(int fd, const void *buf, size_t count) {
     }
 
     toEpoll(fd_event, tinyrpc::IOEvent::WRITE);
-    // TOEDIT
-    std::cout << "[write_hook] : write func to yield" << std::endl;
+
+    DebugLog << "write func to yield";
     tinyrpc::Coroutine::Yield();
 
     fd_event->delListenEvents(tinyrpc::IOEvent::WRITE);
     fd_event->clearCoroutine();
+    // fd_event->updateToReactor();
 
-    // TOEDIT
-    std::cout << "[write_hook] : write func yield back, now to call sys write" << std::endl;
+    DebugLog << "write func yield back, now to call sys write";
     return g_sys_write_fun(fd, buf, count);
 }
 
-int connect_hook(int sockfd, const struct sockaddr* addr, socklen_t addrlen) {
-    // TOEDIT
-    std::cout << "[connect_hook] : this is hook connect" << std::endl;
+int connect_hook(int sockfd, const struct sockaddr *addr, socklen_t addrlen) {
+    DebugLog << "this is hook connect";
     if (tinyrpc::Coroutine::IsMainCoroutine()) {
-        // TOEDIT
-        std::cout << "[connect_hook] : hook disable, call sys connect func" << std::endl;
+        DebugLog << "hook disable, call sys connect func";
         return g_sys_connect_fun(sockfd, addr, addrlen);
     }
 
-    tinyrpc::Reactor* reactor = tinyrpc::Reactor::GetReactor();
+    tinyrpc::Reactor *reactor = tinyrpc::Reactor::GetReactor();
     tinyrpc::FdEvent::ptr fd_event = tinyrpc::FdEventContainer::GetFdContainer()->getFdEvent(sockfd);
     if (fd_event->getReactor() == nullptr) {
         fd_event->setReactor(reactor);
     }
-    tinyrpc::Coroutine* cur_cor = tinyrpc::Coroutine::GetCurrentCoroutine();
+    tinyrpc::Coroutine *cur_cor = tinyrpc::Coroutine::GetCurrentCoroutine();
 
     fd_event->setNonBlock();
 
     int n = g_sys_connect_fun(sockfd, addr, addrlen);
     if (n == 0) {  // connect成功，直接返回
-        // TOEDIT
-        std::cout << "[connect_hook] : direct connect succ, return" << std::endl;
+        DebugLog << "direct connect succ, return";
         return 0;
     } else if (errno != EINPROGRESS) {  // 连接失败，且不是EINPROGRESS，返回错误
-        // TOEDIT
-        std::cout << "[connect_hook] : connect error and errno is't EINPROGRESS, errno=" << errno << ", error=" << strerror(errno) << std::endl;
+        DebugLog << "connect error and errno is't EINPROGRESS, errno=" << errno << ", error=" << strerror(errno);
         return n;
     }
 
-    // TOEDIT
-    std::cout << "[connect_hook] : errno == EINPROGRESS" << std::endl;
+    DebugLog << "errno == EINPROGRESS";
 
     // 注册WRITE事件，connect完成时，socket会变为可写
     toEpoll(fd_event, tinyrpc::IOEvent::WRITE);
@@ -183,10 +206,11 @@ int connect_hook(int sockfd, const struct sockaddr* addr, socklen_t addrlen) {
         // 设置超时标志，然后唤醒协程
         is_timeout = true;
         tinyrpc::Coroutine::Resume(cur_cor);
-    }; 
+    };
     // 创建TimerEvent，超时时间从配置读取
-    tinyrpc::TimerEvent::ptr event = std::make_shared<tinyrpc::TimerEvent>(gRpcConfig->m_max_connect_timeout, false, timeout_cb);
-    tinyrpc::Timer* timer = reactor->getTimer();
+    tinyrpc::TimerEvent::ptr event =
+        std::make_shared<tinyrpc::TimerEvent>(gRpcConfig->max_connect_timeout_, false, timeout_cb);
+    tinyrpc::Timer *timer = reactor->getTimer();
     // 添加到Reactor的Timer中
     timer->addTimerEvent(event);
 
@@ -202,27 +226,22 @@ int connect_hook(int sockfd, const struct sockaddr* addr, socklen_t addrlen) {
 
     n = g_sys_connect_fun(sockfd, addr, addrlen);
     if ((n < 0 && errno == EISCONN) || n == 0) {
-        // TOEDIT
-        std::cout << "[connect_hook] : connect succ" << std::endl;
+        DebugLog << "connect succ";
         return 0;
     }
 
     if (is_timeout) {
-        // TOEDIT
-        std::cout << "[connect_hook] : connect error, timeout[" << gRpcConfig->m_max_connect_timeout << "ms]" << std::endl;
+        DebugLog << "connect error, timeout[" << gRpcConfig->max_connect_timeout_ << "ms]";
         errno = ETIMEDOUT;
     }
-    // TOEDIT
-    std::cout << "[connect_hook] : connect error and errno=" << errno << ", error=" << strerror(errno) << std::endl;
+    DebugLog << "connect error and errno=" << errno << ", error=" << strerror(errno);
     return -1;
 }
 
 int accept_hook(int sockfd, struct sockaddr *addr, socklen_t *addrlen) {
-    // TOEDIT
-    std::cout << "[accept_hook] : this is hook accept" << std::endl;
+    DebugLog << "this is hook accept";
     if (tinyrpc::Coroutine::IsMainCoroutine()) {
-        // TOEDIT
-        std::cout << "[accept_hook] : hook disable, call sys accept func" << std::endl;
+        DebugLog << "hook disable, call sys accept func";
         return g_sys_accept_fun(sockfd, addr, addrlen);
     }
     // 获取Reactor和FdEvent
@@ -245,34 +264,29 @@ int accept_hook(int sockfd, struct sockaddr *addr, socklen_t *addrlen) {
     // 执行到此说明会阻塞，注册READ事件并yield
     toEpoll(fd_event, tinyrpc::IOEvent::READ);
 
-    // TOEDIT
-    std::cout << "[accept_hook] : accept func to yield" << std::endl;
+    DebugLog << "accept func to yield";
     tinyrpc::Coroutine::Yield();
 
     // 被唤醒恢复后清理并再次accept
     fd_event->delListenEvents(tinyrpc::IOEvent::READ);
     fd_event->clearCoroutine();
-    // TOEDIT
-    std::cout << "[accept_hook] : accept func yield back, now to call sys accept" << std::endl;
+    DebugLog << "accept func yield back, now to call sys accept";
     return g_sys_accept_fun(sockfd, addr, addrlen);
-} 
+}
 
 unsigned int sleep_hook(unsigned int seconds) {
-    // TOEDIT
-    std::cout << "[sleep_hook] : this is hook sleep" << std::endl;
+    DebugLog << "this is hook sleep";
     if (tinyrpc::Coroutine::IsMainCoroutine()) {
-        // TOEDIT
-        std::cout << "[sleep_hook] : hook disable, call sys sleep func" << std::endl;
+        DebugLog << "hook disable, call sys sleep func";
         return g_sys_sleep_fun(seconds);
     }
 
-    tinyrpc::Coroutine* cur_cor = tinyrpc::Coroutine::GetCurrentCoroutine();
+    tinyrpc::Coroutine *cur_cor = tinyrpc::Coroutine::GetCurrentCoroutine();
 
     bool is_timeout = false;
     // 设置超时回调 = 设置超时标志并恢复协程
     auto timeout_cb = [cur_cor, &is_timeout]() {
-        // TOEDIT
-        std::cout << "[sleep_hook] : onTime, now resume sleep cor" << std::endl;
+        DebugLog << "onTime, now resume sleep cor";
         is_timeout = true;
         tinyrpc::Coroutine::Resume(cur_cor);
     };
@@ -281,8 +295,7 @@ unsigned int sleep_hook(unsigned int seconds) {
     tinyrpc::TimerEvent::ptr event = std::make_shared<tinyrpc::TimerEvent>(1000 * seconds, false, timeout_cb);
     tinyrpc::Reactor::GetReactor()->getTimer()->addTimerEvent(event);
 
-    // TOEDIT
-    std::cout << "[sleep_hook] : now to yield sleep" << std::endl;
+    DebugLog << "now to yield sleep";
     // 使用yield直到超时，使用while循环确保只有超时才返回
     while (!is_timeout) {
         tinyrpc::Coroutine::Yield();
@@ -291,8 +304,7 @@ unsigned int sleep_hook(unsigned int seconds) {
     return 0;
 }
 
-
-}
+}  // namespace tinyrpc
 
 extern "C" {
 
@@ -335,5 +347,4 @@ unsigned int sleep(unsigned int seconds) {
         return tinyrpc::sleep_hook(seconds);
     }
 }
-
 }

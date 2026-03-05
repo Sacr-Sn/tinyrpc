@@ -1,16 +1,16 @@
-#include <iostream>
-#include <sys/epoll.h>
-#include <sys/eventfd.h>
 #include <assert.h>
 #include <string.h>
+#include <sys/epoll.h>
+#include <sys/eventfd.h>
 #include <algorithm>
+#include <iostream>
 
-#include "../comm/log.h"
+#include "coroutine_hook.h"
+#include "log.h"
 #include "reactor.h"
 #include "timer.h"
-#include "../coroutine/coroutine_hook.h"
 
-extern read_fun_ptr_t g_sys_read_fun;  // Ô­Ê¼ÏµÍ³µ÷ÓÃº¯ÊıÖ¸Õë£¬±ÜÃâĞ­³Ìhook
+extern read_fun_ptr_t g_sys_read_fun;    // Ô­Ê¼ÏµÍ³µ÷ÓÃº¯ÊıÖ¸Õë£¬±ÜÃâĞ­³Ìhook
 extern write_fun_ptr_t g_sys_write_fun;  // Ô­Ê¼ÏµÍ³µ÷ÓÃº¯ÊıÖ¸Õë£¬±ÜÃâĞ­³Ìhook
 
 namespace tinyrpc {
@@ -24,66 +24,54 @@ static CoroutineTaskQueue* t_coroutine_task_queue = nullptr;  // È«¾ÖĞ­³ÌÈÎÎñ¶ÓÁ
 Reactor::Reactor() {
     // È·±£Ã¿¸öÏß³ÌÖ»ÄÜ´´½¨Ò»¸öReactorÊµÀı
     if (t_reactor_ptr != nullptr) {
-        // TOEDIT
-        std::cout << "[Reactor::Reactor] : this thread has already create a reactor" << std::endl;
-        // TODO ÔÚlog.ccÖĞÊµÏÖ¸Ã·½·¨£¬È»ºó·Å¿ª×¢ÊÍ
-        // Exit(0);  
+        DebugLog << "this thread has already create a reactor";
+        Exit(0);
     }
 
-    m_tid = gettid();  // »ñÈ¡µ±Ç°Ïß³ÌID
-    // TOEDIT
-    std::cout << "[Reactor::Reactor] : thread[" << m_tid << "] succ create a reactor" << std::endl;
+    tid_ = gettid();  // »ñÈ¡µ±Ç°Ïß³ÌID
+    DebugLog << "thread[" << tid_ << "] succ create a reactor";
     t_reactor_ptr = this;
 
     // ´´½¨epollÊµÀı
-    if ((m_epfd = epoll_create(1)) <= 0) {
-        // TOEDIT
-        std::cout << "[Reactor::Reactor] : epoll_create error, sys error=" << strerror(errno) << std::endl;
-        // TODO ÔÚlog.ccÖĞÊµÏÖ¸Ã·½·¨£¬È»ºó·Å¿ª×¢ÊÍ
-        // Exit(0);
+    if ((epfd_ = epoll_create(1)) <= 0) {
+        DebugLog << "epoll_create error, sys error=" << strerror(errno);
+        Exit(0);
     } else {
-        // TOEDIT
-        std::cout << "[Reactor::Reactor] : m_epfd = " << m_epfd << std::endl;
+        DebugLog << "epfd_ = " << epfd_;
     }
 
     // ´´½¨»½ĞÑÎÄ¼şÃèÊö·û£¬ÓÃÓÚ¿çÏß³Ì»½ĞÑReactor
-    if ((m_wake_fd = eventfd(0, EFD_NONBLOCK)) <= 0) {
-        // TOEDIT
-        std::cout << "[Reactor::Reactor] : event_fd error, sys error=" << strerror(errno) << std::endl;
-        // TODO ÔÚlog.ccÖĞÊµÏÖ¸Ã·½·¨£¬È»ºó·Å¿ª×¢ÊÍ
-        // Exit(0);
+    if ((wake_fd_ = eventfd(0, EFD_NONBLOCK)) <= 0) {
+        DebugLog << "event_fd error, sys error=" << strerror(errno);
+        Exit(0);
     }
-    // TOEDIT
-    std::cout << "[Reactor::Reactor] : wakefd = " << m_wake_fd << std::endl;
+    DebugLog << "[Reactor::Reactor] : wakefd = " << wake_fd_;
 
     // Ìí¼Ó wakeup fd µ½ epoll
     addWakeupFd();
 }
 
 Reactor::~Reactor() {
-    // TOEDIT
-    std::cout << "[Reactor::~Reactor] : ~Reactor" << std::endl;
-    close(m_epfd);
-    if (m_timer != nullptr) {
-        delete m_timer;
-        m_timer = nullptr;
+    DebugLog << " ~Reactor";
+    close(epfd_);
+    if (timer_ != nullptr) {
+        delete timer_;
+        timer_ = nullptr;
     }
     t_reactor_ptr = nullptr;
 }
 
 Reactor* Reactor::GetReactor() {
     if (t_reactor_ptr == nullptr) {  // ÀÁ¼ÓÔØ
-        // TOEDIT
-        std::cout << "[Reactor::GetReactor] : create new Reacctor" << std::endl;
+        DebugLog << "create new Reacctor";
         t_reactor_ptr = new Reactor();
     }
     return t_reactor_ptr;
 }
 
 void Reactor::addEvent(int fd, epoll_event event, bool is_wakeup) {
-    if (fd = -1) {
-        // TOEDIT
-        std::cout << "[Reactor::addEvent] : add error. if invalid, fd = -1" << std::endl;
+    if (fd == -1) {
+        DebugLog << "add error. if invalid, fd = -1";
         return;
     }
     // ÅĞ¶ÏÊÇ·ñÔÚReactorÏß³Ì
@@ -92,19 +80,18 @@ void Reactor::addEvent(int fd, epoll_event event, bool is_wakeup) {
         return;
     }
     {
-        Mutex::Lock lock(m_mutex);
+        std::lock_guard<std::mutex> lock(mtx_);
         // ½«Ê±¼ä¼ÓÈë´ıÌí¼Ó¶ÓÁĞ
-        m_pending_add_fds.insert(std::pair<int, epoll_event>(fd, event));
+        pending_add_fds_.insert(std::pair<int, epoll_event>(fd, event));
     }
     if (is_wakeup) {
         wakeup();  // »½ĞÑÊÂ¼şÑ­»·
     }
-} 
+}
 
 void Reactor::delEvent(int fd, bool is_wakeup) {
-    if (fd = -1) {
-        // TOEDIT
-        std::cout << "[Reactor::addEvent] : add error. if invalid, fd = -1" << std::endl;
+    if (fd == -1) {
+        DebugLog << "add error. if invalid, fd = -1";
         return;
     }
 
@@ -114,9 +101,9 @@ void Reactor::delEvent(int fd, bool is_wakeup) {
     }
 
     {
-        Mutex::Lock lock(m_mutex);
+        std::lock_guard<std::mutex> lock(mtx_);
         // ½«fd¼ÓÈë´ıÉ¾³ı¶ÓÁĞ
-        m_pending_del_fds.push_back(fd);
+        pending_del_fds_.push_back(fd);
     }
 
     if (is_wakeup) {
@@ -126,7 +113,7 @@ void Reactor::delEvent(int fd, bool is_wakeup) {
 
 void Reactor::wakeup() {
     // ¼ì²éÊÇ·ñÕıÔÚÑ­»·ÖĞ£¬Ã»ÓĞÔòÖ±½Ó·µ»Ø
-    if (!m_is_looping) {
+    if (!is_looping_) {
         return;
     }
 
@@ -136,29 +123,27 @@ void Reactor::wakeup() {
      * Ïòwakeup fdĞ´Èë8×Ö½ÚÊı¾İ
      * Ê¹ÓÃÔ­Ê¼ÏµÍ³µ÷ÓÃg_sys_write_fun±ÜÃâĞ­³Ìhook
      * Ğ´Èë»á´¥·¢epoll_wait·µ»Ø£¬´Ó¶ø»½ĞÑReactor
-    */
-    if (g_sys_write_fun(m_wake_fd, p, 8) != 8) {
-        // TOEDIT
-        std::cerr << "[Reactor::wakeup] : write wakeupfd[" << m_wake_fd << "] error" << std::endl;
+     */
+    if (g_sys_write_fun(wake_fd_, p, 8) != 8) {
+        ErrorLog << "write wakeupfd[" << wake_fd_ << "] error";
     }
 }
 
 bool Reactor::isLoopThread() const {
     // Í¨¹ı±È½ÏReactorµÄÏß³ÌIDºÍµ±Ç°Ïß³ÌIDÀ´ÅĞ¶Ï
-    return m_tid == gettid();  // ×¢Òâ²»ÊÇ±¾ÀàÖĞµÄgetTid()
+    return tid_ == gettid();  // ×¢Òâ²»ÊÇ±¾ÀàÖĞµÄgetTid()
 }
 
 // Ìí¼Ó»½ĞÑfdµ½epoll£¬½«wakeup fd×¢²áµ½epoll£¬¼àÌıEPOLLINÊÂ¼ş
 void Reactor::addWakeupFd() {
     int op = EPOLL_CTL_ADD;
     epoll_event event;
-    event.data.fd = m_wake_fd;
+    event.data.fd = wake_fd_;
     event.events = EPOLLIN;
-    if ((epoll_ctl(m_epfd, op, m_wake_fd, &event)) != 0) {
-        // TOEDIT
-        std::cerr << "[Reactor::addWakeupFd] : epoll_ctl error, fd[" << m_wake_fd << "], errno=" << errno << ", err=" << strerror(errno) << std::endl;
+    if ((epoll_ctl(epfd_, op, wake_fd_, &event)) != 0) {
+        ErrorLog << "epoll_ctl error, fd[" << wake_fd_ << "], errno=" << errno << ", err=" << strerror(errno);
     }
-    m_fds.push_back(m_wake_fd);
+    fds_.push_back(wake_fd_);
 }
 
 // ÔÚReactorÏß³ÌÄÚÌí¼ÓÊÂ¼ş
@@ -167,66 +152,61 @@ void Reactor::addEventInLoopThread(int fd, epoll_event event) {
 
     int op = EPOLL_CTL_ADD;
     bool is_add = true;
-    auto it = find(m_fds.begin(), m_fds.end(), fd);
+    auto it = find(fds_.begin(), fds_.end(), fd);
     // Èç¹ûfdÒÑ´æÔÚ£¬Ê¹ÓÃEPOLL_CTL_MODĞŞ¸Ä
-    if (it != m_fds.end()) {
+    if (it != fds_.end()) {
         is_add = false;
         op = EPOLL_CTL_MOD;
     }
 
     // Èç¹ûfd²»´æÔÚ£¬Ê¹ÓÃEPOLL_CTL_ADDÌí¼Ó
     // µ÷ÓÃepoll_ctl½«ÊÂ¼ş×¢²áµ½epoll
-    if (epoll_ctl(m_epfd, op, fd, &event) != 0) {
-        // TOEDIT
-        std::cerr << "[Reactor::addEventInLoopThread] : epoo_ctl error, fd[" << fd << "], sys errinfo = " << strerror(errno) << std::endl;
+    if (epoll_ctl(epfd_, op, fd, &event) != 0) {
+        ErrorLog << "epoo_ctl error, fd[" << fd << "], sys errinfo = " << strerror(errno);
         return;
     }
-    // Èç¹ûÊÇĞÂÌí¼ÓµÄfd£¬¼ÓÈëm_fdsÏòÁ¿
+    // Èç¹ûÊÇĞÂÌí¼ÓµÄfd£¬¼ÓÈëfds_ÏòÁ¿
     if (is_add) {
-        m_fds.push_back(fd);
+        fds_.push_back(fd);
     }
-    // TOEDIT
-    std::cout << "[Reactor::addEventInLoopThread] : epoll_ctl add succ, fd[" << fd << "]" << std::endl;
+    DebugLog << "epoll_ctl add succ, fd[" << fd << "]";
 }
 
 // ÔÚReactorÏß³ÌÄÚÉ¾³ıÊÂ¼ş
 void Reactor::delEventInLoopThread(int fd) {
     assert(isLoopThread());
 
-    // ²éÕÒÒªÉ¾³ıµÄfdÔÚm_fdsÖĞÊÇ·ñ´æÔÚ
-    auto it = find(m_fds.begin(), m_fds.end(), fd);
-    if (it == m_fds.end()) {
-        // TOEDIT
-        std::cout << "[Reactor::delEventInLoopThread] : fd[" << fd << "] not in this loop" << std::endl;
+    // ²éÕÒÒªÉ¾³ıµÄfdÔÚfds_ÖĞÊÇ·ñ´æÔÚ
+    auto it = find(fds_.begin(), fds_.end(), fd);
+    if (it == fds_.end()) {
+        DebugLog << "fd[" << fd << "] not in this loop";
         return;
     }
-    
+
     int op = EPOLL_CTL_DEL;
     // µ÷ÓÃepoll_ctl£¬´ÓepollÖĞÉ¾³ı
-    if ((epoll_ctl(m_epfd, op, fd, nullptr)) != 0) {
-        // TOEDIT
-        std::cerr << "[Reactor::delEventInLoopThread] : epoo_ctl error, fd[" << fd << "], sys errinfo = " << strerror(errno) << std::endl;
+    if ((epoll_ctl(epfd_, op, fd, nullptr)) != 0) {
+        ErrorLog << "epoo_ctl error, fd[" << fd << "], sys errinfo = " << strerror(errno);
     }
 
-    // ¸üĞÂfdÁĞ±í£¬´Óm_fdsÖĞÒÆ³ı 
-    m_fds.erase(it);
-    // TOEDIT
-    std::cout << "[Reactor::delEventInLoopThread] : del succ, fd[" << fd << "]" << std::endl;
+    // ¸üĞÂfdÁĞ±í£¬´Ófds_ÖĞÒÆ³ı
+    fds_.erase(it);
+    DebugLog << "del succ, fd[" << fd << "]";
 }
 
 // ºËĞÄÊÂ¼şÑ­»·
 void Reactor::loop() {
     assert(isLoopThread());  // È·±£ÔÚReactorÏß³ÌÖĞ
-    if (m_is_looping) {  // ¼ì²éÊÇ·ñÒÑ¾­ÔÚÑ­»·ÖĞ
+    if (is_looping_) {       // ¼ì²éÊÇ·ñÒÑ¾­ÔÚÑ­»·ÖĞ
         return;
     }
 
-    m_is_looping = true;
-    m_stop_flag = false;
+    is_looping_ = true;
+    stop_flag_ = false;
 
     // Èç¹ûÓĞ´ı»Ö¸´µÄĞ­³Ì£¬Ö±½ÓResume¶ø²»¼ÓÈëÈ«¾Ö¶ÓÁĞ£¬¼õÉÙËø¾ºÕù
     Coroutine* first_coroutine = nullptr;
-    while (!m_stop_flag) {
+    while (!stop_flag_) {
         const int MAX_EVENTS = 10;
         epoll_event re_events[MAX_EVENTS + 1];
 
@@ -236,7 +216,7 @@ void Reactor::loop() {
         }
 
         // ´¦ÀíÈ«¾ÖĞ­³ÌÈÎÎñ¶ÓÁĞ£¨½öSubReactor£©
-        if (m_reactor_type != MainReactor) {
+        if (reactor_type_ != MainReactor) {
             FdEvent* ptr = NULL;
             while (1) {
                 // SubReactor´ÓCoroutineTaskQueueÖĞÈ¡³ö´ıÖ´ĞĞµÄĞ­³Ì
@@ -252,39 +232,40 @@ void Reactor::loop() {
         }
 
         // Ö´ĞĞ´ı´¦ÀíÈÎÎñ
-        Mutex::Lock lock(m_mutex);
         std::vector<std::function<void()>> tmp_tasks;
-        tmp_tasks.swap(m_pending_tasks);  // ¼õÉÙËø³ÖÓĞÊ±¼ä
-        lock.unlock();
-        for (size_t i=0; i<tmp_tasks.size(); i++) {
+        {
+            std::lock_guard<std::mutex> lock(mtx_);
+            tmp_tasks.swap(pending_tasks_);  // ¼õÉÙËø³ÖÓĞÊ±¼ä
+        }
+
+        for (size_t i = 0; i < tmp_tasks.size(); i++) {
             if (tmp_tasks[i]) {
                 tmp_tasks[i]();
             }
         }
 
         // epoll_waitÊÂ¼ş£¬×î¶àµÈ´ı10Ãë£¬·µ»Ø¾ÍĞ÷µÄÊÂ¼şÊıÁ¿
-        int rt = epoll_wait(m_epfd, re_events, MAX_EVENTS, t_max_epoll_timeout);
+        int rt = epoll_wait(epfd_, re_events, MAX_EVENTS, t_max_epoll_timeout);
         if (rt < 0) {
-            // TOEDIT
-            std::cerr << "[Reactor::loop] : epoll_wait error, skip, errno=" << strerror(errno) << std::endl;
+            ErrorLog << "epoll_wait error, skip, errno=" << strerror(errno);
         } else {  // ´¦Àí¾ÍĞ÷ÊÂ¼ş
-            for (int i=0; i<rt; i++) {
+            for (int i = 0; i < rt; i++) {
                 epoll_event one_event = re_events[i];
-                if (one_event.data.fd == m_wake_fd && (one_event.events & READ)) {  // ´¦ÀíwakeupÊÂ¼ş
+                if (one_event.data.fd == wake_fd_ && (one_event.events & READ)) {  // ´¦ÀíwakeupÊÂ¼ş
                     char buf[8];
                     // Çå¿Õeventfd£¬±ÜÃâÖØ¸´´¥·¢
                     while (1) {
-                        if ((g_sys_read_fun(m_wake_fd, buf, 8) == -1) && errno == EAGAIN) {
+                        if ((g_sys_read_fun(wake_fd_, buf, 8) == -1) && errno == EAGAIN) {
                             break;
                         }
                     }
                 } else {  // ´¦ÀíÆÕÍ¨I/OÊÂ¼ş
-                    tinyrpc::FdEvent* ptr =(tinyrpc::FdEvent*)one_event.data.ptr;
+                    tinyrpc::FdEvent* ptr = (tinyrpc::FdEvent*)one_event.data.ptr;
                     if (ptr != nullptr) {
                         int fd = ptr->getFd();
                         if ((!(one_event.events & EPOLLIN)) && (!(one_event.events & EPOLLOUT))) {  // Î´ÖªÊÂ¼ş
-                            // TOEDIT
-                            std::cerr << "socket [" << fd << "] occur other unknow event:[" << one_event.events << "], need unregister this socket" << std::endl;
+                            ErrorLog << "socket [" << fd << "] occur other unknow event:[" << one_event.events
+                                     << "], need unregister this socket";
                             delEventInLoopThread(fd);  // ×¢ÏúÎ´ÖªÊÂ¼ş
                         } else {
                             if (ptr->getCoroutine()) {  // Èç¹ûFdEvent¹ØÁªÁËĞ­³Ì
@@ -293,7 +274,7 @@ void Reactor::loop() {
                                     first_coroutine = ptr->getCoroutine();
                                     continue;
                                 }
-                                if (m_reactor_type == SubReactor) {
+                                if (reactor_type_ == SubReactor) {
                                     // SubReactor½«Ğ­³Ì¼ÓÈëÈ«¾Ö¶ÓÁĞ
                                     delEventInLoopThread(fd);
                                     ptr->setReactor(NULL);
@@ -310,18 +291,18 @@ void Reactor::loop() {
                                 std::function<void()> write_cb;
                                 read_cb = ptr->getCallBack(READ);
                                 write_cb = ptr->getCallBack(WRITE);
-                                if (fd == m_timer_fd) {  // TimerÊÂ¼şÖ±½ÓÖ´ĞĞ»Øµ÷
+                                if (fd == timer_fd_) {  // TimerÊÂ¼şÖ±½ÓÖ´ĞĞ»Øµ÷
                                     read_cb();
                                     continue;
                                 }
                                 // ÆäËüÊÂ¼ş½«»Øµ÷¼ÓÈëÈÎÎñ¶ÓÁĞ
                                 if (one_event.events & EPOLLIN) {
-                                    Mutex::Lock lock(m_mutex);
-                                    m_pending_tasks.push_back(read_cb);
+                                    std::lock_guard<std::mutex> lock(mtx_);
+                                    pending_tasks_.push_back(read_cb);
                                 }
                                 if (one_event.events & EPOLLOUT) {
-                                    Mutex::Lock lock(m_mutex);
-                                    m_pending_tasks.push_back(write_cb);
+                                    std::lock_guard<std::mutex> lock(mtx_);
+                                    pending_tasks_.push_back(write_cb);
                                 }
                             }
                         }
@@ -333,12 +314,12 @@ void Reactor::loop() {
             std::map<int, epoll_event> tmp_add;
             std::vector<int> tmp_del;
             {
-                Mutex::Lock lock(m_mutex);
-                tmp_add.swap(m_pending_add_fds);  // swap¼õÉÙËøÕ¼ÓÃÊ±¼ä
-                m_pending_add_fds.clear();
+                std::lock_guard<std::mutex> lock(mtx_);
+                tmp_add.swap(pending_add_fds_);  // swap¼õÉÙËøÕ¼ÓÃÊ±¼ä
+                pending_add_fds_.clear();
 
-                tmp_del.swap(m_pending_del_fds);
-                m_pending_del_fds.clear();
+                tmp_del.swap(pending_del_fds_);
+                pending_del_fds_.clear();
             }
             for (auto i = tmp_add.begin(); i != tmp_add.end(); i++) {
                 addEventInLoopThread((*i).first, (*i).second);
@@ -348,22 +329,21 @@ void Reactor::loop() {
             }
         }
     }
-    // TOEDIT
-    std::cout << "[Reactor::loop] : reactor loop end" << std::endl;
-    m_is_looping = false;
+    DebugLog << "[Reactor::loop] : reactor loop end";
+    is_looping_ = false;
 }
 
 void Reactor::stop() {
-    if (!m_stop_flag && m_is_looping) {
-        m_stop_flag = true;
+    if (!stop_flag_ && is_looping_) {
+        stop_flag_ = true;
         wakeup();
     }
 }
 
 void Reactor::addTask(std::function<void()> task, bool is_wakeup) {
     {
-        Mutex::Lock lock(m_mutex);
-        m_pending_tasks.push_back(task);
+        std::lock_guard<std::mutex> lock(mtx_);
+        pending_tasks_.push_back(task);
     }
     if (is_wakeup) {
         wakeup();
@@ -376,8 +356,8 @@ void Reactor::addTask(std::vector<std::function<void()>> task, bool is_wakeup) {
     }
 
     {
-        Mutex::Lock lock(m_mutex);
-        m_pending_tasks.insert(m_pending_tasks.end(), task.begin(), task.end());
+        std::lock_guard<std::mutex> lock(mtx_);
+        pending_tasks_.insert(pending_tasks_.end(), task.begin(), task.end());
     }
     if (is_wakeup) {
         wakeup();
@@ -386,27 +366,21 @@ void Reactor::addTask(std::vector<std::function<void()>> task, bool is_wakeup) {
 
 // Ìí¼ÓĞ­³Ì£¬½«Ğ­³ÌµÄResume²Ù×÷°ü×°³ÉÈÎÎñ£¬µ÷ÓÃaddTask()
 void Reactor::addCoroutine(tinyrpc::Coroutine::ptr cor, bool is_wakeup) {
-    auto func = [cor]() {
-        tinyrpc::Coroutine::Resume(cor.get());
-    };
+    auto func = [cor]() { tinyrpc::Coroutine::Resume(cor.get()); };
     addTask(func, is_wakeup);
 }
 
 Timer* Reactor::getTimer() {
-    if (!m_timer) {
-        m_timer = new Timer(this);
-        m_timer_fd = m_timer->getFd();
+    if (!timer_) {
+        timer_ = new Timer(this);
+        timer_fd_ = timer_->getFd();
     }
-    return m_timer;
+    return timer_;
 }
 
-pid_t Reactor::getTid() {
-    return m_tid;
-}
+pid_t Reactor::getTid() { return tid_; }
 
-void Reactor::setReactorType(ReactorType type) {
-    m_reactor_type = type;
-}
+void Reactor::setReactorType(ReactorType type) { reactor_type_ = type; }
 
 CoroutineTaskQueue* CoroutineTaskQueue::GetCoroutineTaskQueue() {
     if (t_coroutine_task_queue) {
@@ -417,23 +391,20 @@ CoroutineTaskQueue* CoroutineTaskQueue::GetCoroutineTaskQueue() {
 }
 
 void CoroutineTaskQueue::push(FdEvent* cor) {
-    Mutex::Lock lock(m_mutex);
-    m_task.push(cor);
-    lock.unlock();
+    std::lock_guard<std::mutex> lock(mtx_);
+    task_.push(cor);
 }
 
 FdEvent* CoroutineTaskQueue::pop() {
     FdEvent* re = nullptr;
-    Mutex::Lock lock(m_mutex);
-    if (m_task.size() >= 1) {
-        re = m_task.front();
-        m_task.pop();
+    {
+        std::lock_guard<std::mutex> lock(mtx_);
+        if (task_.size() >= 1) {
+            re = task_.front();
+            task_.pop();
+        }
     }
-    lock.unlock();
-
     return re;
 }
 
-
-
-}
+}  // namespace tinyrpc

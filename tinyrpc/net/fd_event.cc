@@ -7,14 +7,13 @@ namespace tinyrpc {
 
 static FdEventContainer* g_FdContainer = nullptr;
 
-FdEvent::FdEvent(tinyrpc::Reactor* reactor, int fd) : m_fd(fd), m_reactor(reactor) {
+FdEvent::FdEvent(tinyrpc::Reactor* reactor, int fd) : fd_(fd), reactor_(reactor) {
     if (reactor == nullptr) {
-        // TOEDIT 暂时用cout代替log
-        std::cout << "[FdEvent::FdEvent] : reactor is nullptr, create it first" << std::endl;
+        DebugLog << "reactor is nullptr, create it first";
     }
 }
 
-FdEvent::FdEvent(int fd) : m_fd(fd) {}
+FdEvent::FdEvent(int fd) : fd_(fd) {}
 
 FdEvent::~FdEvent() {}
 
@@ -24,18 +23,13 @@ void FdEvent::handleEvent(int flag) {
     } else if (flag == WRITE) {
         m_write_callback();
     } else {
-        // TOEDIT 暂时用cout代替log
-        std::cout << "[FdEvent::handleEvent] : error flag" << std::endl;
+        ErrorLog << "error flag";
     }
 }
 
-int FdEvent::getFd() const {
-    return m_fd;
-}
+int FdEvent::getFd() const { return fd_; }
 
-void FdEvent::setFd(const int fd) {
-    m_fd = fd;
-}
+void FdEvent::setFd(const int fd) { fd_ = fd; }
 
 void FdEvent::setCallBack(IOEvent flag, std::function<void()> cb) {
     if (flag == READ) {
@@ -43,8 +37,7 @@ void FdEvent::setCallBack(IOEvent flag, std::function<void()> cb) {
     } else if (flag == WRITE) {
         m_write_callback = cb;
     } else {
-        // TOEDIT 暂时用cout代替log
-        std::cout << "[FdEvent::setCallBack] : error flag" << std::endl;
+        DebugLog << "[FdEvent::setCallBack] : error flag";
     }
 }
 
@@ -59,8 +52,7 @@ std::function<void()> FdEvent::getCallBack(IOEvent flag) const {
 
 void FdEvent::addListenEvents(IOEvent event) {
     if (m_listen_events & event) {
-        // TOEDIT 暂时用cout代替log
-        std::cout << "[FdEvent::addListenEvents] : already has this event, skip" << std::endl;
+        DebugLog << "already has this event, skip";
         return;
     }
     // |= 对两个操作数的每个二进制位执行按位或操作
@@ -72,118 +64,106 @@ void FdEvent::delListenEvents(IOEvent event) {
     if (m_listen_events & event) {
         m_listen_events &= ~event;
         updateToReactor();
-        // TOEDIT 暂时用cout代替log
-        std::cout << "[FdEvent::delListenEvents] : delete succ" << std::endl;
+        DebugLog << "[FdEvent::delListenEvents] : delete succ";
         return;
     }
-    // TOEDIT 暂时用cout代替log
-    std::cout << "[FdEvent::delListenEvents] : this event not exists, skip" << std::endl;
+    DebugLog << "[FdEvent::delListenEvents] : this event not exists, skip";
 }
 
-int FdEvent::getListenEvents() const {
-    return m_listen_events;
-}
+int FdEvent::getListenEvents() const { return m_listen_events; }
 
 void FdEvent::updateToReactor() {
     epoll_event event;
     event.events = m_listen_events;
     event.data.ptr = this;
-    if (!m_reactor) {
-        m_reactor = tinyrpc::Reactor::GetReactor();
+    if (!reactor_) {
+        reactor_ = tinyrpc::Reactor::GetReactor();
     }
 
-    m_reactor->addEvent(m_fd, event);
+    reactor_->addEvent(fd_, event);
 }
 
 void FdEvent::unregisterFromReactor() {
-    if (!m_reactor) {
-        m_reactor = tinyrpc::Reactor::GetReactor();
+    if (!reactor_) {
+        reactor_ = tinyrpc::Reactor::GetReactor();
     }
-    m_reactor->delEvent(m_fd);
+    reactor_->delEvent(fd_);
     m_listen_events = 0;
     m_read_callback = nullptr;
     m_write_callback = nullptr;
 }
 
-Reactor* FdEvent::getReactor() const {
-    return m_reactor;
-}
+Reactor* FdEvent::getReactor() const { return reactor_; }
 
-void FdEvent::setReactor(Reactor* r) {
-    m_reactor = r;
-}
+void FdEvent::setReactor(Reactor* r) { reactor_ = r; }
 
 void FdEvent::setNonBlock() {
-    if (m_fd == -1) {
-        // TOEDIT 暂时用cout代替log
-        std::cerr << "[FdEvent::setNonBlock] : error, fd=-1" << std::endl;
+    if (fd_ == -1) {
+        ErrorLog << "error, fd=-1";
         return;
     }
 
-    int flag = fcntl(m_fd, F_GETFL, 0);
+    int flag = fcntl(fd_, F_GETFL, 0);
     if (flag & O_NONBLOCK) {
-        // TOEDIT 暂时用cout代替log
-        std::cout << "[FdEvent::setNonBlock] : fd already set o_nonblock" << std::endl;
+        DebugLog << "fd already set o_nonblock";
         return;
     }
 
-    fcntl(m_fd, F_SETFL, flag | O_NONBLOCK);
-    flag = fcntl(m_fd, F_GETFL, 0);
+    fcntl(fd_, F_SETFL, flag | O_NONBLOCK);
+    flag = fcntl(fd_, F_GETFL, 0);
     if (flag & O_NONBLOCK) {
-        // TOEDIT 暂时用cout代替log
-        std::cout << "[FdEvent::setNonBlock] : succ set o_nonblock" << std::endl;
+        DebugLog << "succ set o_nonblock";
     } else {
-        // TOEDIT 暂时用cout代替log
-        std::cerr << "[FdEvent::setNonBlock] : set o_nonblock error" << std::endl;
+        ErrorLog << "set o_nonblock error";
     }
 }
 
 bool FdEvent::isNonBlock() {
-    if (m_fd == -1) {
-        // TOEDIT 暂时用cout代替log
-        std::cerr << "[FdEvent::isNonBlock] : error, fd=-1" << std::endl;
+    if (fd_ == -1) {
+        ErrorLog << "error, fd=-1";
         return false;
     }
-    int flag = fcntl(m_fd, F_GETFL, 0);
+    int flag = fcntl(fd_, F_GETFL, 0);
     return (flag & O_NONBLOCK);
 }
 
-void FdEvent::setCoroutine(Coroutine* cor) {
-    m_coroutine = cor;
-}
+void FdEvent::setCoroutine(Coroutine* cor) { m_coroutine = cor; }
 
-void FdEvent::clearCoroutine() {
-    m_coroutine = nullptr;
-}
+void FdEvent::clearCoroutine() { m_coroutine = nullptr; }
 
-Coroutine* FdEvent::getCoroutine() {
-    return m_coroutine;
-}
-
-
+Coroutine* FdEvent::getCoroutine() { return m_coroutine; }
 
 FdEvent::ptr FdEventContainer::getFdEvent(int fd) {
-    RWMutex::ReadLock rlock(m_mutex);  // 读锁
-    if (fd < static_cast<int>(m_fds.size())) {
-        tinyrpc::FdEvent::ptr re = m_fds[fd];
-        rlock.unlock();
+    // 两阶段检查，处理读锁与写锁的切换问题
+    // 第一阶段：用读锁快速检查是否需要写
+    {
+        std::shared_lock<std::shared_mutex> read_lock(rw_mtx_);
+        if (fd < static_cast<int>(fds_.size())) {
+            // 不需写操作（数组扩容），仅进行读操作
+            tinyrpc::FdEvent::ptr re = fds_[fd];
+            return re;
+        }
+    }  // 读锁在此释放
+    // 第二阶段：重新上写锁，并再次检查（因为状态可能已变）
+    std::unique_lock<std::shared_mutex> write_lock(rw_mtx_);
+    if (!(fd < static_cast<int>(fds_.size()))) {
+        // 需要进行写操作
+        int n = (int)(fd * 1.5);  // 容量不足，fds扩容
+        for (int i = fds_.size(); i < n; i++) {
+            fds_.push_back(std::make_shared<FdEvent>(i));
+        }
+        tinyrpc::FdEvent::ptr re = fds_[fd];
+        return re;
+    } else {
+        // 可能中途被其它线程扩容后，不再需要扩容，仅读即可
+        tinyrpc::FdEvent::ptr re = fds_[fd];
         return re;
     }
-    rlock.unlock();
-
-    RWMutex::WriteLock wlock(m_mutex);  // 写锁
-    int n = (int)(fd * 1.5);  // 容量不足，fds扩容
-    for (int i=m_fds.size(); i<n; i++) {
-        m_fds.push_back(std::make_shared<FdEvent>(i));
-    }
-    tinyrpc::FdEvent::ptr re = m_fds[fd];
-    wlock.unlock();
-    return re;
 }
 
 FdEventContainer::FdEventContainer(int size) {
-    for (int i=0; i<size; i++) {
-        m_fds.push_back(std::make_shared<FdEvent>(i));
+    for (int i = 0; i < size; i++) {
+        fds_.push_back(std::make_shared<FdEvent>(i));
     }
 }
 
@@ -194,6 +174,4 @@ FdEventContainer* FdEventContainer::GetFdContainer() {
     return g_FdContainer;
 }
 
-
-
-}
+}  // namespace tinyrpc
