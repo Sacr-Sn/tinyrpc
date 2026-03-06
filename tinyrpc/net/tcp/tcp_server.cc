@@ -3,19 +3,19 @@
 #include <string.h>
 #include <sys/socket.h>
 
-#include "config.h"
-#include "coroutine.h"
-#include "coroutine_hook.h"
-#include "coroutine_pool.h"
-#include "http_codec.h"
-#include "http_dispatcher.h"
-#include "io_thread.h"
-#include "log.h"
-#include "tcp_connection.h"
-#include "tcp_connection_time_wheel.h"
-#include "tcp_server.h"
-#include "tinypb_codec.h"
-#include "tinypb_rpc_dispatcher.h"
+#include <tinyrpc/comm/config.h>
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/coroutine/coroutine.h>
+#include <tinyrpc/coroutine/coroutine_hook.h>
+#include <tinyrpc/coroutine/coroutine_pool.h>
+#include <tinyrpc/net/http/http_codec.h>
+#include <tinyrpc/net/http/http_dispatcher.h>
+#include <tinyrpc/net/tcp/io_thread.h>
+#include <tinyrpc/net/tcp/tcp_connection.h>
+#include <tinyrpc/net/tcp/tcp_connection_time_wheel.h>
+#include <tinyrpc/net/tcp/tcp_server.h>
+#include <tinyrpc/net/tinypb/tinypb_codec.h>
+#include <tinyrpc/net/tinypb/tinypb_rpc_dispatcher.h>
 
 namespace tinyrpc {
 

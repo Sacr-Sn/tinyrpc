@@ -1,16 +1,21 @@
 #include <google/protobuf/service.h>
 
-#include "coroutine_hook.h"
-#include "tcp_server.h"
-#include "config.h"
-#include "log.h"
-#include "start.h"
+// #include <tinyrpc/coroutine/coroutine_hook.h>
+// #include <tinyrpc/net/tcp/tcp_server.h>
+// #include #include <tinyrpc/comm/config.h>
+// #include <tinyrpc/comm/log.h>
+// #include <tinyrpc/comm/start.h>
+#include <tinyrpc/comm/config.h>
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/comm/start.h>
+#include <tinyrpc/coroutine/coroutine_hook.h>
+#include <tinyrpc/net/tcp/tcp_server.h>
 
 namespace tinyrpc {
 
-tinyrpc::Config::ptr gRpcConfig;    // 全局配置对象
-tinyrpc::Logger::ptr gRpcLogger;    // 全局日志对象
-tinyrpc::TcpServer::ptr gRpcServer; // 全局TCP服务器对象
+tinyrpc::Config::ptr gRpcConfig;     // 全局配置对象
+tinyrpc::Logger::ptr gRpcLogger;     // 全局日志对象
+tinyrpc::TcpServer::ptr gRpcServer;  // 全局TCP服务器对象
 
 static int g_init_config = 0;
 
@@ -19,15 +24,15 @@ void InitConfig(const char *file) {
     // 在配置初始化阶段禁用协程 Hook，避免在协程未就绪时出现问题
     tinyrpc::SetHook(false);
 
-    // MySQL初始化（可选）
-    #ifdef DECLARE_MYSQL_PULGIN
+// MySQL初始化（可选）
+#ifdef DECLARE_MYSQL_PULGIN
     int rt = mysql_library_init(0, NULL, NULL);
     if (rt != 0) {
         printf("Start TinyRPC server error, call mysql_library_init error\n");
         mysql_library_end();
         exit(0);
     }
-    #endif
+#endif
 
     // 重新启用Hook
     tinyrpc::SetHook(true);
@@ -41,23 +46,17 @@ void InitConfig(const char *file) {
     }
 }
 
-TcpServer::ptr GetServer() {
-    return gRpcServer;
-}
+TcpServer::ptr GetServer() { return gRpcServer; }
 
 void StartRpcServer() {
     gRpcLogger->start();  // 启动异步日志线程
     gRpcServer->start();  // 开始监听和接受连接
 }
 
-int GetIOThreadPoolSize() {
-    return gRpcServer->getIOThreadPool()->getIOThreadPoolSize();
-}
+int GetIOThreadPoolSize() { return gRpcServer->getIOThreadPool()->getIOThreadPoolSize(); }
 
-Config::ptr GetConfig() {
-    return gRpcConfig;
-}
+Config::ptr GetConfig() { return gRpcConfig; }
 
 void AddTimerEvent(TimerEvent::ptr event) {}
 
-} // namespace tinyrpc
+}  // namespace tinyrpc

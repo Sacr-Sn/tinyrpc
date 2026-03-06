@@ -1,10 +1,12 @@
-#include "string_util.h"
-#include "log.h"
+// #include <tinyrpc/comm/string_util.h>
+// #include <tinyrpc/comm/log.h>
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/comm/string_util.h>
 
 namespace tinyrpc {
 
-void StringUtil::SplitStrToMap(const std::string& str, const std::string& split_str,
-        const std::string& joiner, std::map<std::string, std::string>& res) {
+void StringUtil::SplitStrToMap(const std::string& str, const std::string& split_str, const std::string& joiner,
+                               std::map<std::string, std::string>& res) {
     if (str.empty() || split_str.empty() || joiner.empty()) {
         DebugLog << "str or split_str or joiner_str is empty";
         return;
@@ -26,12 +28,11 @@ void StringUtil::SplitStrToMap(const std::string& str, const std::string& split_
     }
 }
 
-void StringUtil::SplitStrToVector(const std::string& str, const std::string& split_str,
-        std::vector<std::string>& res) {
+void StringUtil::SplitStrToVector(const std::string& str, const std::string& split_str, std::vector<std::string>& res) {
     if (str.empty() || split_str.empty()) {
         return;
     }
-    
+
     std::string tmp = str;
     // 如果字符串末尾没有分隔符,自动添加
     if (tmp.substr(tmp.length() - split_str.length(), split_str.length()) != split_str) {
@@ -52,4 +53,4 @@ void StringUtil::SplitStrToVector(const std::string& str, const std::string& spl
     }
 }
 
-}
+}  // namespace tinyrpc

@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "config.h"
-#include "coroutine_pool.h"
-#include "io_thread.h"
-#include "tcp_connection.h"
-#include "tcp_server.h"
+#include <tinyrpc/comm/config.h>
+#include <tinyrpc/coroutine/coroutine_pool.h>
+#include <tinyrpc/net/tcp/io_thread.h>
+#include <tinyrpc/net/tcp/tcp_connection.h>
+#include <tinyrpc/net/tcp/tcp_server.h>
 
 namespace tinyrpc {
 

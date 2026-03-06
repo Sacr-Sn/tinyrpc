@@ -2,13 +2,13 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/service.h>
 
-#include "coroutine.h"
-#include "coroutine_pool.h"
-#include "error_code.h"
-#include "msg_req.h"
-#include "run_time.h"
-#include "start.h"
-#include "tinypb_rpc_async_channel.h"
+#include <tinyrpc/comm/error_code.h>
+#include <tinyrpc/comm/msg_req.h>
+#include <tinyrpc/comm/run_time.h>
+#include <tinyrpc/comm/start.h>
+#include <tinyrpc/coroutine/coroutine.h>
+#include <tinyrpc/coroutine/coroutine_pool.h>
+#include <tinyrpc/net/tinypb/tinypb_rpc_async_channel.h>
 
 namespace tinyrpc {
 

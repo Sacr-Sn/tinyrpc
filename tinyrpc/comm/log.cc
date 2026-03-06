@@ -19,12 +19,18 @@
 #    include <mysql/mysql.h>
 #endif
 
-#include "config.h"
-#include "coroutine.h"
-#include "log.h"
-#include "reactor.h"
-#include "run_time.h"
-#include "timer.h"
+// #include #include <tinyrpc/comm/config.h>
+// #include <tinyrpc/coroutine/coroutine.h>
+// #include <tinyrpc/comm/log.h>
+// #include <tinyrpc/net/comm/reactor.h>
+// #include "run_time.h"
+// #include <tinyrpc/net/comm/timer.h>
+#include <tinyrpc/comm/config.h>
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/comm/run_time.h>
+#include <tinyrpc/coroutine/coroutine.h>
+#include <tinyrpc/net/comm/reactor.h>
+#include <tinyrpc/net/comm/timer.h>
 
 namespace tinyrpc {
 

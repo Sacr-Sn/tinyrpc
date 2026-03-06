@@ -1,10 +1,10 @@
 #include <google/protobuf/service.h>
 
-#include "http_dispatcher.h"
-#include "http_request.h"
-#include "http_servlet.h"
-#include "log.h"
-#include "msg_req.h"
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/comm/msg_req.h>
+#include <tinyrpc/net/http/http_dispatcher.h>
+#include <tinyrpc/net/http/http_request.h>
+#include <tinyrpc/net/http/http_servlet.h>
 
 namespace tinyrpc {
 

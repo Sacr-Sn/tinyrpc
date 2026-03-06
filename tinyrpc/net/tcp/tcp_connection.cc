@@ -2,17 +2,17 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
-#include "abstract_slot.h"
-#include "coroutine.h"
-#include "coroutine_hook.h"
-#include "coroutine_pool.h"
-#include "tcp_client.h"
-#include "tcp_connection.h"
-#include "tcp_connection_time_wheel.h"
-#include "tcp_server.h"
-#include "timer.h"
-#include "tinypb_codec.h"
-#include "tinypb_data.h"
+#include <tinyrpc/coroutine/coroutine.h>
+#include <tinyrpc/coroutine/coroutine_hook.h>
+#include <tinyrpc/coroutine/coroutine_pool.h>
+#include <tinyrpc/net/comm/timer.h>
+#include <tinyrpc/net/tcp/abstract_slot.h>
+#include <tinyrpc/net/tcp/tcp_client.h>
+#include <tinyrpc/net/tcp/tcp_connection.h>
+#include <tinyrpc/net/tcp/tcp_connection_time_wheel.h>
+#include <tinyrpc/net/tcp/tcp_server.h>
+#include <tinyrpc/net/tinypb/tinypb_codec.h>
+#include <tinyrpc/net/tinypb/tinypb_data.h>
 
 namespace tinyrpc {
 

@@ -1,10 +1,10 @@
-#include "tinypb_rpc_dispatcher.h"
-#include "tinypb_codec.h"
-#include "tinypb_rpc_closure.h"
+#include <tinyrpc/net/tinypb/tinypb_codec.h>
+#include <tinyrpc/net/tinypb/tinypb_rpc_closure.h>
+#include <tinyrpc/net/tinypb/tinypb_rpc_dispatcher.h>
 
-#include "error_code.h"
-#include "msg_req.h"
-#include "tinypb_rpc_controller.h"
+#include <tinyrpc/comm/error_code.h>
+#include <tinyrpc/comm/msg_req.h>
+#include <tinyrpc/net/tinypb/tinypb_rpc_controller.h>
 
 namespace tinyrpc {
 

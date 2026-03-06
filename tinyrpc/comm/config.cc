@@ -4,10 +4,14 @@
 #include <algorithm>
 #include <memory>
 
-#include "config.h"
-#include "log.h"
-#include "net_address.h"
-#include "tcp_server.h"
+// #include #include <tinyrpc/comm/config.h>
+// #include <tinyrpc/comm/log.h>
+// #include <tinyrpc/net/comm/net_address.h>
+// #include <tinyrpc/net/tcp/tcp_server.h>
+#include <tinyrpc/comm/config.h>
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/net/comm/net_address.h>
+#include <tinyrpc/net/tcp/tcp_server.h>
 
 namespace tinyrpc {
 

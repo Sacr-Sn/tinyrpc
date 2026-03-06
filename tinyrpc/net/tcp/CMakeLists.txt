@@ -1,11 +1,11 @@
 set(HEADERS
-    include/abstract_slot.h  
-    include/tcp_client.h                 
-    include/tcp_server.h
-    include/io_thread.h      
-    include/tcp_connection.h
-    include/tcp_buffer.h     
-    include/tcp_connection_time_wheel.h
+    abstract_slot.h  
+    tcp_client.h                 
+    tcp_server.h
+    io_thread.h      
+    tcp_connection.h
+    tcp_buffer.h     
+    tcp_connection_time_wheel.h
 )
  
 install(FILES ${HEADERS} DESTINATION include/tinyrpc/net/tcp)

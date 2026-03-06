@@ -3,10 +3,10 @@
 #include <fcntl.h>
 #include <string.h>
 
-#include "config.h"
-#include "coroutine_hook.h"
-#include "fd_event.h"
-#include "timer.h"
+#include <tinyrpc/comm/config.h>
+#include <tinyrpc/coroutine/coroutine_hook.h>
+#include <tinyrpc/net/comm/fd_event.h>
+#include <tinyrpc/net/comm/timer.h>
 
 /**
  * 核心机制：函数指针获取

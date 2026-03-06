@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <sys/mman.h>
 
-#include "log.h"
-#include "memory.h"
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/coroutine/memory.h>
 
 namespace tinyrpc {
 

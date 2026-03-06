@@ -1,11 +1,11 @@
 #include <algorithm>
 #include <sstream>
 
-#include "http_codec.h"
-#include "http_request.h"
-#include "http_response.h"
-#include "log.h"
-#include "string_util.h"
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/comm/string_util.h>
+#include <tinyrpc/net/http/http_codec.h>
+#include <tinyrpc/net/http/http_request.h>
+#include <tinyrpc/net/http/http_response.h>
 
 namespace tinyrpc {
 

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option cc_generic_services = true;
+
+// message 定义数据结构
+message AppendEntriesRequest {
+    int32 term = 1;
+    int32 leader_id = 2;
+    string log_entry = 3;
+}
+
+message AppendEntriesResponse {
+    bool success = 1;
+    string info = 2;
+}
+
+// service 定义服务（service 名即服务类名，括号内用 rpc 定义接口名和函数名）
+service raftRpc {
+    rpc AppendEntries(AppendEntriesRequest) returns (AppendEntriesResponse);
+}

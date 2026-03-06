@@ -1,8 +1,8 @@
 #include <string.h>
 #include <unistd.h>
 
-#include "log.h"
-#include "tcp_buffer.h"
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/net/tcp/tcp_buffer.h>
 
 namespace tinyrpc {
 

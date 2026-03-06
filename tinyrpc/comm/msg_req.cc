@@ -4,9 +4,9 @@
 #include <unistd.h>
 #include <random>
 
-#include "config.h"
-#include "log.h"
-#include "msg_req.h"
+#include <tinyrpc/comm/config.h>
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/comm/msg_req.h>
 
 namespace tinyrpc {
 

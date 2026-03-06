@@ -1,15 +1,15 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 
-#include "coroutine_pool.h"
-#include "error_code.h"
-#include "fd_event.h"
-#include "http_codec.h"
-#include "log.h"
-#include "net_address.h"
-#include "tcp_client.h"
-#include "timer.h"
-#include "tinypb_codec.h"
+#include <tinyrpc/comm/error_code.h>
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/coroutine/coroutine_pool.h>
+#include <tinyrpc/net/comm/fd_event.h>
+#include <tinyrpc/net/comm/net_address.h>
+#include <tinyrpc/net/comm/timer.h>
+#include <tinyrpc/net/http/http_codec.h>
+#include <tinyrpc/net/tcp/tcp_client.h>
+#include <tinyrpc/net/tinypb/tinypb_codec.h>
 
 namespace tinyrpc {
 

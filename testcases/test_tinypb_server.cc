@@ -2,12 +2,12 @@
 #include <atomic>
 #include <sstream>
 
-#include "log.h"
-#include "net_address.h"
-#include "start.h"
-#include "tcp_server.h"
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/comm/start.h>
+#include <tinyrpc/net/comm/net_address.h>
+#include <tinyrpc/net/tcp/tcp_server.h>
+#include <tinyrpc/net/tinypb/tinypb_rpc_dispatcher.h>
 #include "test_tinypb_server.pb.h"
-#include "tinypb_rpc_dispatcher.h"
 
 /**
  * protobuf 文件提供的只是接口说明，而实际的业务逻辑需要自己实现。
@@ -23,12 +23,10 @@ class QueryServiceImpl : public QueryService {
 
     void query_name(google::protobuf::RpcController *controller, const ::queryNameReq *request,
                     ::queryNameRes *response, ::google::protobuf::Closure *done) {
-        // AppInfoLog("QueryServiceImpl.query_name, req={%s}", request->ShortDebugString().c_str());
         AppInfoLog(std::format("QueryServiceImpl.query_name, req={}", request->ShortDebugString()));
         response->set_id(request->id());
         response->set_name("ikerli");
 
-        // AppInfoLog("QueryServiceImpl.query_name, res={%s}", response->ShortDebugString().c_str());
         AppInfoLog(std::format("QueryServiceImpl.query_name, res={}", response->ShortDebugString()));
         if (done) {
             done->Run();
@@ -37,11 +35,7 @@ class QueryServiceImpl : public QueryService {
 
     void query_age(google::protobuf::RpcController *controller, const ::queryAgeReq *request, ::queryAgeRes *response,
                    ::google::protobuf::Closure *done) {
-        // AppInfoLog("QueryServiceImpl.query_age, req={%s}", request->ShortDebugString().c_str());
         AppInfoLog(std::format("QueryServiceImpl.query_age, req={}", request->ShortDebugString()));
-        // AppInfoLog << "QueryServiceImpl.query_age, sleep 6 s begin";
-        // sleep(6);
-        // AppInfoLog << "QueryServiceImpl.query_age, sleep 6 s end";
 
         response->set_ret_code(0);
         response->set_res_info("OK");
@@ -53,7 +47,6 @@ class QueryServiceImpl : public QueryService {
             done->Run();
         }
 
-        // AppInfoLog("QueryServiceImpl.query_age, res={%s}", response->ShortDebugString().c_str());
         AppInfoLog(std::format("QueryServiceImpl.query_age, res={}", response->ShortDebugString()));
     }
 };

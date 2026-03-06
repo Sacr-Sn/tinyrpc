@@ -1,11 +1,11 @@
 #include <google/protobuf/service.h>
+#include <tinyrpc/net/comm/net_address.h>
+#include <tinyrpc/net/tinypb/tinypb_rpc_async_channel.h>
+#include <tinyrpc/net/tinypb/tinypb_rpc_channel.h>
+#include <tinyrpc/net/tinypb/tinypb_rpc_closure.h>
+#include <tinyrpc/net/tinypb/tinypb_rpc_controller.h>
 #include <iostream>
-#include "net_address.h"
 #include "test_tinypb_server.pb.h"
-#include "tinypb_rpc_async_channel.h"
-#include "tinypb_rpc_channel.h"
-#include "tinypb_rpc_closure.h"
-#include "tinypb_rpc_controller.h"
 
 void test_client() {
     tinyrpc::IPAddress::ptr addr = std::make_shared<tinyrpc::IPAddress>("127.0.0.1", 39999);

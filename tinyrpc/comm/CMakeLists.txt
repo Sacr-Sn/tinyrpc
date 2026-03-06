@@ -1,13 +1,13 @@
 set(HEADERS
-    include/config.h
-    include/error_code.h
-    include/log.h
-    include/msg_req.h
-    include/mysql_instase.h
-    include/run_time.h
-    include/start.h
-    include/string_util.h
-    include/thread_pool.h
+    config.h
+    error_code.h
+    log.h
+    msg_req.h
+    mysql_instase.h
+    run_time.h
+    start.h
+    string_util.h
+    thread_pool.h
 )
  
 install(FILES ${HEADERS} DESTINATION include/tinyrpc/comm)

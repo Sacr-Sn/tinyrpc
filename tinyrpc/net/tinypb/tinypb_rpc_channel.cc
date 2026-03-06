@@ -2,14 +2,14 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/service.h>
 
-#include "error_code.h"
-#include "log.h"
-#include "msg_req.h"
-#include "run_time.h"
-#include "tinypb_codec.h"
-#include "tinypb_data.h"
-#include "tinypb_rpc_channel.h"
-#include "tinypb_rpc_controller.h"
+#include <tinyrpc/comm/error_code.h>
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/comm/msg_req.h>
+#include <tinyrpc/comm/run_time.h>
+#include <tinyrpc/net/tinypb/tinypb_codec.h>
+#include <tinyrpc/net/tinypb/tinypb_data.h>
+#include <tinyrpc/net/tinypb/tinypb_rpc_channel.h>
+#include <tinyrpc/net/tinypb/tinypb_rpc_controller.h>
 
 namespace tinyrpc {
 

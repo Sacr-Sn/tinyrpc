@@ -1,6 +1,6 @@
-#include "coroutine_pool.h"
-#include "config.h"
-#include "log.h"
+#include <tinyrpc/comm/config.h>
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/coroutine/coroutine_pool.h>
 
 namespace tinyrpc {
 

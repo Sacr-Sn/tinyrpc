@@ -23,6 +23,7 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/tinyrpc/comm/include
     ${PROJECT_SOURCE_DIR}/tinyrpc/coroutine/include
     ${PROJECT_SOURCE_DIR}/tinyrpc/net/include
+    ${PROJECT_SOURCE_DIR}/tinyrpc/net/comm/include
     ${PROJECT_SOURCE_DIR}/tinyrpc/net/http/include
     ${PROJECT_SOURCE_DIR}/tinyrpc/net/tcp/include
     ${PROJECT_SOURCE_DIR}/tinyrpc/net/tinypb/include
@@ -32,13 +33,14 @@ include_directories(
 aux_source_directory(${PROJECT_SOURCE_DIR}/tinyrpc/comm COMM)
 aux_source_directory(${PROJECT_SOURCE_DIR}/tinyrpc/coroutine COR)
 aux_source_directory(${PROJECT_SOURCE_DIR}/tinyrpc/net NET)
+aux_source_directory(${PROJECT_SOURCE_DIR}/tinyrpc/net/comm COMM)
 aux_source_directory(${PROJECT_SOURCE_DIR}/tinyrpc/net/http HTTP)
 aux_source_directory(${PROJECT_SOURCE_DIR}/tinyrpc/net/tcp TCP)
 aux_source_directory(${PROJECT_SOURCE_DIR}/tinyrpc/net/tinypb TINYPB)
 
 set(COXTX ${PROJECT_SOURCE_DIR}/tinyrpc/coroutine/coctx_swap.S)
 
-add_library(tinyrpc ${COMM} ${COR} ${NET} ${HTTP} ${TCP} ${TINYPB} ${COXTX})
+add_library(tinyrpc ${COMM} ${COR} ${NET} ${COMM} ${HTTP} ${TCP} ${TINYPB} ${COXTX})
 install(TARGETS tinyrpc DESTINATION ${PATH_LIB})
 
 # ---- protobuf ≈‰÷√ ----
@@ -99,6 +101,7 @@ install(TARGETS test_http_server DESTINATION ${PATH_BIN})
 add_subdirectory(tinyrpc/comm)
 add_subdirectory(tinyrpc/coroutine)
 add_subdirectory(tinyrpc/net)
+add_subdirectory(tinyrpc/net/comm)
 add_subdirectory(tinyrpc/net/http)
 add_subdirectory(tinyrpc/net/tcp)
 add_subdirectory(tinyrpc/net/tinypb)

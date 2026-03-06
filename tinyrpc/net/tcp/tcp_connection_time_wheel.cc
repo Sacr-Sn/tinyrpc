@@ -1,5 +1,5 @@
-#include "tcp_connection_time_wheel.h"
-#include "tcp_connection.h"
+#include <tinyrpc/net/tcp/tcp_connection.h>
+#include <tinyrpc/net/tcp/tcp_connection_time_wheel.h>
 
 namespace tinyrpc {
 

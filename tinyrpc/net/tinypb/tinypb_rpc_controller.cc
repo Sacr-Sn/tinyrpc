@@ -1,4 +1,4 @@
-#include "tinypb_rpc_controller.h"
+#include <tinyrpc/net/tinypb/tinypb_rpc_controller.h>
 
 namespace tinyrpc {
 

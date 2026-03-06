@@ -1,6 +1,6 @@
-#include "http_servlet.h"
-#include "http_define.h"
-#include "log.h"
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/net/http/http_define.h>
+#include <tinyrpc/net/http/http_servlet.h>
 
 namespace tinyrpc {
 

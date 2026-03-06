@@ -4,12 +4,12 @@
 #include <string>
 #include <vector>
 
-#include "abstract_data.h"
-#include "byte.h"
-#include "log.h"
-#include "msg_req.h"
-#include "tinypb_codec.h"
-#include "tinypb_data.h"
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/comm/msg_req.h>
+#include <tinyrpc/net/comm/abstract_data.h>
+#include <tinyrpc/net/comm/byte.h>
+#include <tinyrpc/net/tinypb/tinypb_codec.h>
+#include <tinyrpc/net/tinypb/tinypb_data.h>
 
 namespace tinyrpc {
 

@@ -4,10 +4,14 @@
 #    include <mysql/mysql.h>
 #endif
 
-#include "config.h"
-#include "coroutine_hook.h"
-#include "log.h"
-#include "mysql_instase.h"
+// #include #include <tinyrpc/comm/config.h>
+// #include <tinyrpc/coroutine/coroutine_hook.h>
+// #include <tinyrpc/comm/log.h>
+// #include "mysql_instase.h"
+#include <tinyrpc/comm/config.h>
+#include <tinyrpc/comm/log.h>
+#include <tinyrpc/comm/mysql_instase.h>
+#include <tinyrpc/coroutine/coroutine_hook.h>
 
 extern tinyrpc::Config::ptr gRpcConfig;
 
