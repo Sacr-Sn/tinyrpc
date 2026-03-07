@@ -131,7 +131,6 @@ void TcpConnection::input() {
             break;
         }
         if (rt <= 0) {  // ¶Ô¶Ë¹Ø±Õ
-            DebugLog << "rt <= 0";
             ErrorLog << "read empty while occur read event, because of peer "
                         "close, fd = "
                      << fd_ << ", sys error = " << strerror(errno) << ", now to clear tcp connection";

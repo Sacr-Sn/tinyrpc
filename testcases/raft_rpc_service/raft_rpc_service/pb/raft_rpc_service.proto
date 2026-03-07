@@ -2,11 +2,18 @@ syntax = "proto3";
 
 option cc_generic_services = true;
 
+// 日志实体
+message LogEntry {
+    bytes command = 1;
+    int32 log_term = 2;
+    int32 log_index = 3;
+};
+
 // message 定义数据结构
 message AppendEntriesRequest {
     int32 term = 1;
     int32 leader_id = 2;
-    string log_entry = 3;
+    repeated LogEntry entries = 3;
 }
 
 message AppendEntriesResponse {
@@ -14,7 +21,18 @@ message AppendEntriesResponse {
     string info = 2;
 }
 
-// service 定义服务（service 名即服务类名，括号内用 rpc 定义接口名和函数名）
+message RequestVoteRequest {
+    int32 term = 1;
+    int32 candidate_id = 2;
+}
+
+message RequestVoteReply {
+    int32 term = 1;
+    bool vote_ret = 2;
+}
+
+// service 定义服务（service 名即服务类所在命名空间，括号内用 rpc 定义接口名和函数名）
 service raftRpc {
-    rpc AppendEntries(AppendEntriesRequest) returns (AppendEntriesResponse);
+    rpc AppendEntries (AppendEntriesRequest) returns (AppendEntriesResponse);
+    rpc RequestVote (RequestVoteRequest) returns (RequestVoteReply);
 }
