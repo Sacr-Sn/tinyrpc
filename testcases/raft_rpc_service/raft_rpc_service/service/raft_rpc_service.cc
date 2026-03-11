@@ -24,38 +24,22 @@
 
 #include "raft_rpc_service/interface/interface.h"
 
-#define CALL_RPC_INTERFACE(type)                                                                                  \
-    tinyrpc::TinyPbRpcController* con = dynamic_cast<tinyrpc::TinyPbRpcController*>(controller);                  \
-    std::shared_ptr<type> impl = std::make_shared<type>(*request, *response, *con);                               \
-    try {                                                                                                         \
-        AppInfoLog(std::format("In|request:{}", request->ShortDebugString()));                                    \
-        impl->run();                                                                                              \
-        AppInfoLog(std::format("Out|response:{}", response->ShortDebugString()));                                 \
-    } catch (raft_rpc_service::BusinessException & e) {                                                           \
-        AppErrorLog(std::format("[{}:{}] occur BusinessException, error code={}, error info = {}", e.file_name(), \
-                                e.line(), e.code(), e.error()));                                                  \
-        AppErrorLog(std::format("Out|response:{}", response->ShortDebugString()));                                \
-    } catch (std::exception&) {                                                                                   \
-        AppErrorLog("occur std::exception, error code = -1, error_info = UnKnown error");                         \
-        AppErrorLog(std::format("Out|response:{}", response->ShortDebugString()));                                \
-    } catch (...) {                                                                                               \
-        AppErrorLog("occur UnKnown exception, error code = -1, error_info = UnKnown error");                      \
-        AppErrorLog(std::format("Out|response:{}", response->ShortDebugString()));                                \
-    }                                                                                                             \
-    if (done) {                                                                                                   \
-        done->Run();                                                                                              \
-    }
-
 namespace raft_rpc_service {
+
+void raftRpcImpl::init(std::string str) { time_str = str; }
 
 void raftRpcImpl::AppendEntries(::google::protobuf::RpcController* controller, const ::AppendEntriesRequest* request,
                                 ::AppendEntriesResponse* response, ::google::protobuf::Closure* done) {
-    CALL_RPC_INTERFACE(AppendEntriesInterface);
+    // CALL_RPC_INTERFACE(AppendEntriesInterface);
+    init("abcd");
+    response->set_success("true");
+    response->set_info(std::format("skip the call_rpc_interface, the size of entries is {}, and the time_str is {}",
+                                   request->entries().size(), time_str));
 }
 
 void raftRpcImpl::RequestVote(::google::protobuf::RpcController* controller, const ::RequestVoteRequest* request,
                               ::RequestVoteReply* response, ::google::protobuf::Closure* done) {
-    CALL_RPC_INTERFACE(RequestVoteInterface);
+    // CALL_RPC_INTERFACE(RequestVoteInterface);
 }
 
 }  // namespace raft_rpc_service

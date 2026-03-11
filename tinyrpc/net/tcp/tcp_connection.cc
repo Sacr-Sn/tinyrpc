@@ -117,7 +117,10 @@ void TcpConnection::input() {
         DebugLog << "read_buffer_ size = " << read_buffer_->getBufferVector().size()
                  << ", rd = " << read_buffer_->readIndex() << ", wd = " << read_buffer_->writeIndex();
         // 调用read_hook()从socket读取数据到缓冲区
+        DebugLog << "read event triggered, fd=" << fd_;
         int rt = read_hook(fd_, &(read_buffer_->buffer[write_index]), read_count);
+        DebugLog << "read result, rt=" << rt << ", errno=" << errno;
+
         if (rt > 0) {
             read_buffer_->recycleWrite(rt);  // 更新写索引
         }
@@ -130,12 +133,22 @@ void TcpConnection::input() {
             InfoLog << "over time, now break read function";
             break;
         }
-        if (rt <= 0) {  // 对端关闭
-            ErrorLog << "read empty while occur read event, because of peer "
-                        "close, fd = "
-                     << fd_ << ", sys error = " << strerror(errno) << ", now to clear tcp connection";
+        if (rt == 0) {
+            // 对端正常关闭连接
+            InfoLog << "peer close connection (EOF), fd=" << fd_;
             close_flag = true;
             break;
+        } else if (rt == -1) {
+            if (errno == EAGAIN) {
+                // 非阻塞，暂无数据，应该继续等待
+                DebugLog << "read would block, wait next event";
+                break;
+            } else {
+                // 真正的错误
+                ErrorLog << "read error, fd=" << fd_ << ", errno=" << strerror(errno);
+                close_flag = true;
+                break;
+            }
         } else {
             if (rt == read_count) {  // 说明可能还有更多数据，继续读取
                 DebugLog << "read_count == rt";
@@ -146,6 +159,22 @@ void TcpConnection::input() {
                 break;
             }
         }
+        // if (rt <= 0) {  // 对端关闭
+        //     ErrorLog << "read empty while occur read event, because of peer "
+        //                 "close, fd = "
+        //              << fd_ << ", sys error = [" << strerror(errno) << "], now to clear tcp connection";
+        //     close_flag = true;
+        //     break;
+        // } else {
+        //     if (rt == read_count) {  // 说明可能还有更多数据，继续读取
+        //         DebugLog << "read_count == rt";
+        //         continue;
+        //     } else if (rt < read_count) {  // 已读完所有数据，跳出循环
+        //         DebugLog << "read_count > rt";
+        //         read_all = true;
+        //         break;
+        //     }
+        // }
     }
     if (close_flag) {
         clearClient();  // 清理连接

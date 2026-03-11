@@ -1,0 +1,1 @@
+[libprotobuf ERROR google/protobuf/wire_format_lite.cc:618] String field 'AppendEntriesResponse.info' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 

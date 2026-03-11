@@ -1,5 +1,6 @@
 #include <google/protobuf/service.h>
 #include <atomic>
+#include <memory>
 #include <sstream>
 
 #include <tinyrpc/comm/log.h>
@@ -61,7 +62,11 @@ int main(int argc, char *argv[]) {
 
     tinyrpc::InitConfig(argv[1]);
 
-    REGISTER_SERVICE(QueryServiceImpl);
+    // 使用宏来注册服务
+    // REGISTER_SERVICE(QueryServiceImpl);
+
+    // 改为手动注册服务
+    tinyrpc::GetServer()->registerService(std::make_shared<QueryServiceImpl>());
 
     tinyrpc::StartRpcServer();
 

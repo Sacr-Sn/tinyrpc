@@ -1,0 +1,578 @@
+[2026-03-08 17:06:51.776201]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/net_address.cc:32]	create upv4 address succ [127.0.0.1:12345]
+[2026-03-08 17:06:51.874493]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:29]	semaphore begin to wait until new thread finish IOThread::main() to init
+[2026-03-08 17:06:51.874633]	[DEBUG]	[150209]	[150219]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[150219] succ create a reactor
+[2026-03-08 17:06:51.874668]	[DEBUG]	[150209]	[150219]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 3
+[2026-03-08 17:06:51.874679]	[DEBUG]	[150209]	[150219]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 4
+[2026-03-08 17:06:51.874691]	[DEBUG]	[150209]	[150219]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:78]	finish iothread init, now post semaphore
+[2026-03-08 17:06:51.874760]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:33]	semaphore wait end, finish create io thread
+[2026-03-08 17:06:51.874862]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:29]	semaphore begin to wait until new thread finish IOThread::main() to init
+[2026-03-08 17:06:51.875008]	[DEBUG]	[150209]	[150220]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[150220] succ create a reactor
+[2026-03-08 17:06:51.875049]	[DEBUG]	[150209]	[150220]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 5
+[2026-03-08 17:06:51.875059]	[DEBUG]	[150209]	[150220]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 6
+[2026-03-08 17:06:51.875069]	[DEBUG]	[150209]	[150220]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:78]	finish iothread init, now post semaphore
+[2026-03-08 17:06:51.875131]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:33]	semaphore wait end, finish create io thread
+[2026-03-08 17:06:51.875224]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:29]	semaphore begin to wait until new thread finish IOThread::main() to init
+[2026-03-08 17:06:51.875352]	[DEBUG]	[150209]	[150221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[150221] succ create a reactor
+[2026-03-08 17:06:51.875387]	[DEBUG]	[150209]	[150221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 7
+[2026-03-08 17:06:51.875397]	[DEBUG]	[150209]	[150221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 8
+[2026-03-08 17:06:51.875407]	[DEBUG]	[150209]	[150221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:78]	finish iothread init, now post semaphore
+[2026-03-08 17:06:51.875458]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:33]	semaphore wait end, finish create io thread
+[2026-03-08 17:06:51.875541]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:29]	semaphore begin to wait until new thread finish IOThread::main() to init
+[2026-03-08 17:06:51.875660]	[DEBUG]	[150209]	[150222]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[150222] succ create a reactor
+[2026-03-08 17:06:51.875692]	[DEBUG]	[150209]	[150222]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 9
+[2026-03-08 17:06:51.875702]	[DEBUG]	[150209]	[150222]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 10
+[2026-03-08 17:06:51.875712]	[DEBUG]	[150209]	[150222]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:78]	finish iothread init, now post semaphore
+[2026-03-08 17:06:51.875761]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:33]	semaphore wait end, finish create io thread
+[2026-03-08 17:06:51.875771]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:66]	create new Reacctor
+[2026-03-08 17:06:51.875773]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[150209] succ create a reactor
+[2026-03-08 17:06:51.875780]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 11
+[2026-03-08 17:06:51.875785]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 12
+[2026-03-08 17:06:51.875796]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.h:49]	timeevent will occur at 1772960821875
+[2026-03-08 17:06:51.875801]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.cc:42]	m_timer fd = 13
+[2026-03-08 17:06:51.875807]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[13]
+[2026-03-08 17:06:51.875810]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.cc:73]	need reset timer
+[2026-03-08 17:06:51.875814]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.h:49]	timeevent will occur at 1772960821875
+[2026-03-08 17:06:51.875816]	[INFO]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:132]	TcpServer setup on [127.0.0.1:12345]
+[2026-03-08 17:06:51.875823]	[INFO]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/comm/config.cc:327]	read config from file [../conf/raft_rpc_service.xml]: [log_path: ../log/], [log_prefix: raft_rpc_service], [log_max_size: 5 MB], [log_level: DEBUG], [coroutine_stack_size: 256 KB], [coroutine_pool_size: 1000], [msg_req_len: 20], [max_connect_timeout: 75 s], [iothread_num: 4], [timewheel_bucket_num: 6], [timewheel_interval: 10 s], [server_ip: 127.0.0.1], [server_Port: 12345], [server_protocol: TINYPB]
+
+[2026-03-08 17:06:51.875924]	[INFO]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:142]	succ register service[raftRpc]
+[2026-03-08 17:06:51.875927]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.h:49]	timeevent will occur at 1772960812375
+[2026-03-08 17:06:51.875929]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.cc:73]	need reset timer
+[2026-03-08 17:06:51.875978]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:32]	create listenfd succ, listenfd = 14
+[2026-03-08 17:06:51.876077]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:48]	set REUSEADDR succ
+[2026-03-08 17:06:51.876098]	[INFO]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/memory.cc:15]	succ mmap 262144000bytes memory
+[2026-03-08 17:06:51.904553]	[INFO]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:145]	resume accept coroutine
+[2026-03-08 17:06:51.904569]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:242]	this is hook accept
+[2026-03-08 17:06:51.904874]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:115]	succ set o_nonblock
+[2026-03-08 17:06:51.904886]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	fd[14], register read event to epoll
+[2026-03-08 17:06:51.904892]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:06:51.904896]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:267]	accept func to yield
+[2026-03-08 17:06:51.904942]	[DEBUG]	[150209]	[150219]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:86]	IOThread 150219 begin to loop
+[2026-03-08 17:06:51.904957]	[DEBUG]	[150209]	[150220]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:86]	IOThread 150220 begin to loop
+[2026-03-08 17:06:51.904985]	[DEBUG]	[150209]	[150221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:86]	IOThread 150221 begin to loop
+[2026-03-08 17:06:51.904986]	[DEBUG]	[150209]	[150222]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:86]	IOThread 150222 begin to loop
+[2026-03-08 17:07:19.586845]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:07:19.586876]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:67]	[FdEvent::delListenEvents] : delete succ
+[2026-03-08 17:07:19.586884]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:273]	accept func yield back, now to call sys accept
+[2026-03-08 17:07:19.586912]	[INFO]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:80]	New client accepted succ! port:[15489
+[2026-03-08 17:07:19.586923]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/net_address.cc:36]	ip[], port[15489
+[2026-03-08 17:07:19.586933]	[INFO]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:99]	New client accepted succ! fd:[17], addr:[127.0.0.1:33084]
+[2026-03-08 17:07:19.586945]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:233]	fd 17 did't exist, new it
+[2026-03-08 17:07:19.586964]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:32]	succ create tcp connection[2], fd = 17
+[2026-03-08 17:07:19.586982]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:174]	tcp_connection address is 0x610dbf4354d0, and fd is 17
+[2026-03-08 17:07:19.587100]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:178]	current tcp connection count is [1]
+[2026-03-08 17:07:19.587113]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:242]	this is hook accept
+[2026-03-08 17:07:19.587122]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	fd already set o_nonblock
+[2026-03-08 17:07:19.587149]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	fd[14], register read event to epoll
+[2026-03-08 17:07:19.587155]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:07:19.587159]	[DEBUG]	[150209]	[150209]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:267]	accept func to yield
+[2026-03-08 17:07:19.587164]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection_time_wheel.cc:27]	fresh connection
+[2026-03-08 17:07:19.587223]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:117]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:07:19.587259]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:60]	this is hook read
+[2026-03-08 17:07:19.587271]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:115]	succ set o_nonblock
+[2026-03-08 17:07:19.587332]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:85]	Attempted to read immediately, bytes read: 93
+[2026-03-08 17:07:19.587343]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:87]	Read success, bytes: 93
+[2026-03-08 17:07:19.587348]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:124]	read_buffer_ size = 128, rd = 0, wd = 93
+[2026-03-08 17:07:19.587353]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:127]	read data back, fd = 17
+[2026-03-08 17:07:19.587356]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:145]	read_count > rt
+[2026-03-08 17:07:19.587359]	[INFO]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:167]	recv [93] bytes data from [127.0.0.1:33084], fd [17]
+[2026-03-08 17:07:19.587421]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:159]	parse pk_len = 93
+[2026-03-08 17:07:19.587427]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection_time_wheel.cc:27]	fresh connection
+[2026-03-08 17:07:19.587521]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:161]	j = 92, i = 0
+[2026-03-08 17:07:19.587527]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:81]	index = 93, read_index_ = 0
+[2026-03-08 17:07:19.587531]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:87]	read_index_ = 93
+[2026-03-08 17:07:19.587536]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:184]	read_buffer_ size = 128, rd=0, wd=0
+[2026-03-08 17:07:19.587541]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:203]	msg_req_len = 20
+[2026-03-08 17:07:19.587544]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:207]	msg_req_len_index = 9
+[2026-03-08 17:07:19.587613]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:211]	msg_req = 85280932546452287689
+[2026-03-08 17:07:19.587622]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:220]	service_name_len_index = 29
+[2026-03-08 17:07:19.587626]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:231]	service_name_len = 21
+[2026-03-08 17:07:19.587630]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:237]	service_name = raftRpc.AppendEntries
+[2026-03-08 17:07:19.587634]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:250]	err_info_len = 0
+[2026-03-08 17:07:19.587637]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:262]	pb_data_len = 26, pb_index = 62
+[2026-03-08 17:07:19.587643]	[INFO]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:24]	[85280932546452287689]	begin to dispatch client tinypb request, msgno = 85280932546452287689
+[2026-03-08 17:07:19.587649]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:133]	[85280932546452287689]	service_name = raftRpc
+[2026-03-08 17:07:19.587652]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:135]	[85280932546452287689]	method_name = AppendEntries
+[2026-03-08 17:07:19.587662]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:69]	[85280932546452287689]	[raftRpc.AppendEntries]	85280932546452287689|request.name = AppendEntriesRequest
+[2026-03-08 17:07:19.587718]	[INFO]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:80]	[85280932546452287689]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:07:19.587728]	[INFO]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:81]	[85280932546452287689]	[raftRpc.AppendEntries]	85280932546452287689|Get client request data:term: 10086 leader_id: 8848 entries { command: "append logs" log_term: 3 log_index: 666 }
+[2026-03-08 17:07:19.587752]	[INFO]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:82]	[85280932546452287689]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:07:19.587755]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:86]	[85280932546452287689]	[raftRpc.AppendEntries]	85280932546452287689|response.name = AppendEntriesResponse
+[2026-03-08 17:07:19.587764]	[INFO]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:98]	[85280932546452287689]	[raftRpc.AppendEntries]	Call [raftRpc.AppendEntries] succ, now send reply package
+[2026-03-08 17:07:19.588409]	[INFO]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:107]	[85280932546452287689]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:07:19.588414]	[INFO]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:108]	[85280932546452287689]	[raftRpc.AppendEntries]	85280932546452287689|Set server response data:success: true info: "\262\273\276\255\271\375\300\271\275\330\306\367, the size of entries is 1"
+[2026-03-08 17:07:19.588419]	[INFO]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:109]	[85280932546452287689]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:07:19.588422]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:67]	[85280932546452287689]	[raftRpc.AppendEntries]	encode pk_len = 109
+[2026-03-08 17:07:19.588445]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:79]	[85280932546452287689]	[raftRpc.AppendEntries]	msg_req_len = 20
+[2026-03-08 17:07:19.588449]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:90]	[85280932546452287689]	[raftRpc.AppendEntries]	src service_full_name_len = 21
+[2026-03-08 17:07:19.588451]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:101]	[85280932546452287689]	[raftRpc.AppendEntries]	err_code = 0
+[2026-03-08 17:07:19.588453]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:107]	[85280932546452287689]	[raftRpc.AppendEntries]	err_info_len = 0
+[2026-03-08 17:07:19.588454]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:119]	[85280932546452287689]	[raftRpc.AppendEntries]	pb_data_len = 42
+[2026-03-08 17:07:19.588456]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:39]	[85280932546452287689]	[raftRpc.AppendEntries]	encode package len = 109
+[2026-03-08 17:07:19.588458]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:42]	[85280932546452287689]	[raftRpc.AppendEntries]	succ encode and write to buffer, write_index = 109
+[2026-03-08 17:07:19.588461]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:139]	[85280932546452287689]	[raftRpc.AppendEntries]	this is hook write
+[2026-03-08 17:07:19.588464]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	[85280932546452287689]	[raftRpc.AppendEntries]	fd already set o_nonblock
+[2026-03-08 17:07:19.588511]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:230]	[85280932546452287689]	[raftRpc.AppendEntries]	succ write 109 bytes
+[2026-03-08 17:07:19.588516]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:81]	[85280932546452287689]	[raftRpc.AppendEntries]	index = 109, read_index_ = 0
+[2026-03-08 17:07:19.588518]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:87]	[85280932546452287689]	[raftRpc.AppendEntries]	read_index_ = 109
+[2026-03-08 17:07:19.588520]	[INFO]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:233]	[85280932546452287689]	[raftRpc.AppendEntries]	send all data, now unregister write event and break
+[2026-03-08 17:07:19.588549]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:117]	[85280932546452287689]	[raftRpc.AppendEntries]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:07:19.588554]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:60]	[85280932546452287689]	[raftRpc.AppendEntries]	this is hook read
+[2026-03-08 17:07:19.588556]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	[85280932546452287689]	[raftRpc.AppendEntries]	fd already set o_nonblock
+[2026-03-08 17:07:19.588560]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:85]	[85280932546452287689]	[raftRpc.AppendEntries]	Attempted to read immediately, bytes read: -1
+[2026-03-08 17:07:19.588561]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	[85280932546452287689]	[raftRpc.AppendEntries]	fd[17], register read event to epoll
+[2026-03-08 17:07:19.588569]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	[85280932546452287689]	[raftRpc.AppendEntries]	epoll_ctl add succ, fd[17]
+[2026-03-08 17:07:19.588571]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:93]	[85280932546452287689]	[raftRpc.AppendEntries]	read func to yield
+[2026-03-08 17:07:19.588685]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	[85280932546452287689]	[raftRpc.AppendEntries]	epoll_ctl add succ, fd[17]
+[2026-03-08 17:07:19.588700]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:67]	[85280932546452287689]	[raftRpc.AppendEntries]	[FdEvent::delListenEvents] : delete succ
+[2026-03-08 17:07:19.588705]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:101]	[85280932546452287689]	[raftRpc.AppendEntries]	read func yield back, now to call sys read
+[2026-03-08 17:07:19.588716]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:103]	[85280932546452287689]	[raftRpc.AppendEntries]	After yield, bytes read: 0
+[2026-03-08 17:07:19.588720]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:124]	[85280932546452287689]	[raftRpc.AppendEntries]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:07:19.588787]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:127]	[85280932546452287689]	[raftRpc.AppendEntries]	read data back, fd = 17
+[2026-03-08 17:07:19.588798]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:134]	[85280932546452287689]	[raftRpc.AppendEntries]	rt <= 0
+[2026-03-08 17:07:19.588802]	[ERROR]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:135]	[85280932546452287689]	[raftRpc.AppendEntries]	read empty while occur read event, because of peer close, fd = 17, sys error = Resource temporarily unavailable, now to clear tcp connection
+[2026-03-08 17:07:19.588815]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:194]	[85280932546452287689]	[raftRpc.AppendEntries]	del succ, fd[17]
+[2026-03-08 17:07:19.588893]	[DEBUG]	[150209]	[150219]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:153]	[85280932546452287689]	[raftRpc.AppendEntries]	peer close, now yield current coroutine, wait main thread clear this TcpConnection
+[2026-03-08 17:07:21.919206]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:261]	TcpConnection [fd:17] will delete, state = 4
+[2026-03-08 17:07:21.919230]	[DEBUG]	[150209]	[150209]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:55]	~TcpConnection, fd = 17
+[2026-03-08 17:09:34.696920]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/net_address.cc:32]	create upv4 address succ [127.0.0.1:12345]
+[2026-03-08 17:09:34.785268]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:29]	semaphore begin to wait until new thread finish IOThread::main() to init
+[2026-03-08 17:09:34.785425]	[DEBUG]	[152286]	[152290]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[152290] succ create a reactor
+[2026-03-08 17:09:34.785476]	[DEBUG]	[152286]	[152290]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 3
+[2026-03-08 17:09:34.785487]	[DEBUG]	[152286]	[152290]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 4
+[2026-03-08 17:09:34.785500]	[DEBUG]	[152286]	[152290]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:78]	finish iothread init, now post semaphore
+[2026-03-08 17:09:34.785560]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:33]	semaphore wait end, finish create io thread
+[2026-03-08 17:09:34.785644]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:29]	semaphore begin to wait until new thread finish IOThread::main() to init
+[2026-03-08 17:09:34.785703]	[DEBUG]	[152286]	[152291]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[152291] succ create a reactor
+[2026-03-08 17:09:34.785720]	[DEBUG]	[152286]	[152291]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 5
+[2026-03-08 17:09:34.785724]	[DEBUG]	[152286]	[152291]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 6
+[2026-03-08 17:09:34.785729]	[DEBUG]	[152286]	[152291]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:78]	finish iothread init, now post semaphore
+[2026-03-08 17:09:34.785763]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:33]	semaphore wait end, finish create io thread
+[2026-03-08 17:09:34.785852]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:29]	semaphore begin to wait until new thread finish IOThread::main() to init
+[2026-03-08 17:09:34.786036]	[DEBUG]	[152286]	[152292]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[152292] succ create a reactor
+[2026-03-08 17:09:34.786072]	[DEBUG]	[152286]	[152292]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 7
+[2026-03-08 17:09:34.786082]	[DEBUG]	[152286]	[152292]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 8
+[2026-03-08 17:09:34.786092]	[DEBUG]	[152286]	[152292]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:78]	finish iothread init, now post semaphore
+[2026-03-08 17:09:34.786143]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:33]	semaphore wait end, finish create io thread
+[2026-03-08 17:09:34.786278]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:29]	semaphore begin to wait until new thread finish IOThread::main() to init
+[2026-03-08 17:09:34.786388]	[DEBUG]	[152286]	[152293]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[152293] succ create a reactor
+[2026-03-08 17:09:34.786423]	[DEBUG]	[152286]	[152293]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 9
+[2026-03-08 17:09:34.786433]	[DEBUG]	[152286]	[152293]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 10
+[2026-03-08 17:09:34.786444]	[DEBUG]	[152286]	[152293]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:78]	finish iothread init, now post semaphore
+[2026-03-08 17:09:34.786497]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:33]	semaphore wait end, finish create io thread
+[2026-03-08 17:09:34.786509]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:66]	create new Reacctor
+[2026-03-08 17:09:34.786512]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[152286] succ create a reactor
+[2026-03-08 17:09:34.786522]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 11
+[2026-03-08 17:09:34.786527]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 12
+[2026-03-08 17:09:34.786538]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.h:49]	timeevent will occur at 1772960984786
+[2026-03-08 17:09:34.786551]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.cc:42]	m_timer fd = 13
+[2026-03-08 17:09:34.786556]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[13]
+[2026-03-08 17:09:34.786560]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.cc:73]	need reset timer
+[2026-03-08 17:09:34.786565]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.h:49]	timeevent will occur at 1772960984786
+[2026-03-08 17:09:34.786567]	[INFO]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:132]	TcpServer setup on [127.0.0.1:12345]
+[2026-03-08 17:09:34.786576]	[INFO]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/comm/config.cc:327]	read config from file [../conf/raft_rpc_service.xml]: [log_path: ../log/], [log_prefix: raft_rpc_service], [log_max_size: 5 MB], [log_level: DEBUG], [coroutine_stack_size: 256 KB], [coroutine_pool_size: 1000], [msg_req_len: 20], [max_connect_timeout: 75 s], [iothread_num: 4], [timewheel_bucket_num: 6], [timewheel_interval: 10 s], [server_ip: 127.0.0.1], [server_Port: 12345], [server_protocol: TINYPB]
+
+[2026-03-08 17:09:34.786683]	[INFO]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:142]	succ register service[raftRpc]
+[2026-03-08 17:09:34.786686]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.h:49]	timeevent will occur at 1772960975286
+[2026-03-08 17:09:34.786687]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.cc:73]	need reset timer
+[2026-03-08 17:09:34.786706]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:32]	create listenfd succ, listenfd = 14
+[2026-03-08 17:09:34.786723]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:48]	set REUSEADDR succ
+[2026-03-08 17:09:34.786740]	[INFO]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/memory.cc:15]	succ mmap 262144000bytes memory
+[2026-03-08 17:09:34.816793]	[INFO]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:145]	resume accept coroutine
+[2026-03-08 17:09:34.816811]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:242]	this is hook accept
+[2026-03-08 17:09:34.817093]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:115]	succ set o_nonblock
+[2026-03-08 17:09:34.817109]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	fd[14], register read event to epoll
+[2026-03-08 17:09:34.817114]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:09:34.817118]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:267]	accept func to yield
+[2026-03-08 17:09:34.817156]	[DEBUG]	[152286]	[152290]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:86]	IOThread 152290 begin to loop
+[2026-03-08 17:09:34.817176]	[DEBUG]	[152286]	[152291]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:86]	IOThread 152291 begin to loop
+[2026-03-08 17:09:34.817215]	[DEBUG]	[152286]	[152292]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:86]	IOThread 152292 begin to loop
+[2026-03-08 17:09:34.817234]	[DEBUG]	[152286]	[152293]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:86]	IOThread 152293 begin to loop
+[2026-03-08 17:09:46.502203]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:09:46.502236]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:67]	[FdEvent::delListenEvents] : delete succ
+[2026-03-08 17:09:46.502243]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:273]	accept func yield back, now to call sys accept
+[2026-03-08 17:09:46.502273]	[INFO]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:80]	New client accepted succ! port:[2226
+[2026-03-08 17:09:46.502285]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/net_address.cc:36]	ip[], port[2226
+[2026-03-08 17:09:46.502294]	[INFO]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:99]	New client accepted succ! fd:[17], addr:[127.0.0.1:45576]
+[2026-03-08 17:09:46.502307]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:233]	fd 17 did't exist, new it
+[2026-03-08 17:09:46.502326]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:32]	succ create tcp connection[2], fd = 17
+[2026-03-08 17:09:46.502345]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:174]	tcp_connection address is 0x592710ce04d0, and fd is 17
+[2026-03-08 17:09:46.502403]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:178]	current tcp connection count is [1]
+[2026-03-08 17:09:46.502415]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:242]	this is hook accept
+[2026-03-08 17:09:46.502424]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	fd already set o_nonblock
+[2026-03-08 17:09:46.502448]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	fd[14], register read event to epoll
+[2026-03-08 17:09:46.502454]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:09:46.502458]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:267]	accept func to yield
+[2026-03-08 17:09:46.502463]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection_time_wheel.cc:27]	fresh connection
+[2026-03-08 17:09:46.502509]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:117]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:09:46.502532]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:60]	this is hook read
+[2026-03-08 17:09:46.502542]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:115]	succ set o_nonblock
+[2026-03-08 17:09:46.502558]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:85]	Attempted to read immediately, bytes read: 93
+[2026-03-08 17:09:46.502562]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:87]	Read success, bytes: 93
+[2026-03-08 17:09:46.502566]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:124]	read_buffer_ size = 128, rd = 0, wd = 93
+[2026-03-08 17:09:46.502570]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:127]	read data back, fd = 17
+[2026-03-08 17:09:46.502573]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:145]	read_count > rt
+[2026-03-08 17:09:46.502576]	[INFO]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:167]	recv [93] bytes data from [127.0.0.1:45576], fd [17]
+[2026-03-08 17:09:46.502634]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:159]	parse pk_len = 93
+[2026-03-08 17:09:46.502655]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:161]	j = 92, i = 0
+[2026-03-08 17:09:46.502659]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:81]	index = 93, read_index_ = 0
+[2026-03-08 17:09:46.502657]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection_time_wheel.cc:27]	fresh connection
+[2026-03-08 17:09:46.502666]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:87]	read_index_ = 93
+[2026-03-08 17:09:46.502689]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:184]	read_buffer_ size = 128, rd=0, wd=0
+[2026-03-08 17:09:46.502694]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:203]	msg_req_len = 20
+[2026-03-08 17:09:46.502697]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:207]	msg_req_len_index = 9
+[2026-03-08 17:09:46.502714]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:211]	msg_req = 55317019833417487438
+[2026-03-08 17:09:46.502717]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:220]	service_name_len_index = 29
+[2026-03-08 17:09:46.502720]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:231]	service_name_len = 21
+[2026-03-08 17:09:46.502723]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:237]	service_name = raftRpc.AppendEntries
+[2026-03-08 17:09:46.502726]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:250]	err_info_len = 0
+[2026-03-08 17:09:46.502730]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:262]	pb_data_len = 26, pb_index = 62
+[2026-03-08 17:09:46.502735]	[INFO]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:24]	[55317019833417487438]	begin to dispatch client tinypb request, msgno = 55317019833417487438
+[2026-03-08 17:09:46.502741]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:133]	[55317019833417487438]	service_name = raftRpc
+[2026-03-08 17:09:46.502745]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:135]	[55317019833417487438]	method_name = AppendEntries
+[2026-03-08 17:09:46.502755]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:69]	[55317019833417487438]	[raftRpc.AppendEntries]	55317019833417487438|request.name = AppendEntriesRequest
+[2026-03-08 17:09:46.502769]	[INFO]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:80]	[55317019833417487438]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:09:46.502773]	[INFO]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:81]	[55317019833417487438]	[raftRpc.AppendEntries]	55317019833417487438|Get client request data:term: 10086 leader_id: 8848 entries { command: "append logs" log_term: 3 log_index: 666 }
+[2026-03-08 17:09:46.502795]	[INFO]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:82]	[55317019833417487438]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:09:46.502798]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:86]	[55317019833417487438]	[raftRpc.AppendEntries]	55317019833417487438|response.name = AppendEntriesResponse
+[2026-03-08 17:09:46.502806]	[INFO]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:98]	[55317019833417487438]	[raftRpc.AppendEntries]	Call [raftRpc.AppendEntries] succ, now send reply package
+[2026-03-08 17:09:46.502812]	[INFO]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:107]	[55317019833417487438]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:09:46.502815]	[INFO]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:108]	[55317019833417487438]	[raftRpc.AppendEntries]	55317019833417487438|Set server response data:success: true info: "skip the call_rpc_interface, the size of entries is 1"
+[2026-03-08 17:09:46.502822]	[INFO]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:109]	[55317019833417487438]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:09:46.502827]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:67]	[55317019833417487438]	[raftRpc.AppendEntries]	encode pk_len = 124
+[2026-03-08 17:09:46.502836]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:79]	[55317019833417487438]	[raftRpc.AppendEntries]	msg_req_len = 20
+[2026-03-08 17:09:46.502839]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:90]	[55317019833417487438]	[raftRpc.AppendEntries]	src service_full_name_len = 21
+[2026-03-08 17:09:46.502843]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:101]	[55317019833417487438]	[raftRpc.AppendEntries]	err_code = 0
+[2026-03-08 17:09:46.502846]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:107]	[55317019833417487438]	[raftRpc.AppendEntries]	err_info_len = 0
+[2026-03-08 17:09:46.502849]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:119]	[55317019833417487438]	[raftRpc.AppendEntries]	pb_data_len = 57
+[2026-03-08 17:09:46.502853]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:39]	[55317019833417487438]	[raftRpc.AppendEntries]	encode package len = 124
+[2026-03-08 17:09:46.502856]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:42]	[55317019833417487438]	[raftRpc.AppendEntries]	succ encode and write to buffer, write_index = 124
+[2026-03-08 17:09:46.502863]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:139]	[55317019833417487438]	[raftRpc.AppendEntries]	this is hook write
+[2026-03-08 17:09:46.502868]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	[55317019833417487438]	[raftRpc.AppendEntries]	fd already set o_nonblock
+[2026-03-08 17:09:46.502931]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:230]	[55317019833417487438]	[raftRpc.AppendEntries]	succ write 124 bytes
+[2026-03-08 17:09:46.502936]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:81]	[55317019833417487438]	[raftRpc.AppendEntries]	index = 124, read_index_ = 0
+[2026-03-08 17:09:46.502938]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:87]	[55317019833417487438]	[raftRpc.AppendEntries]	read_index_ = 124
+[2026-03-08 17:09:46.502940]	[INFO]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:233]	[55317019833417487438]	[raftRpc.AppendEntries]	send all data, now unregister write event and break
+[2026-03-08 17:09:46.502951]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:117]	[55317019833417487438]	[raftRpc.AppendEntries]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:09:46.502953]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:60]	[55317019833417487438]	[raftRpc.AppendEntries]	this is hook read
+[2026-03-08 17:09:46.502955]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	[55317019833417487438]	[raftRpc.AppendEntries]	fd already set o_nonblock
+[2026-03-08 17:09:46.502959]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:85]	[55317019833417487438]	[raftRpc.AppendEntries]	Attempted to read immediately, bytes read: -1
+[2026-03-08 17:09:46.502960]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	[55317019833417487438]	[raftRpc.AppendEntries]	fd[17], register read event to epoll
+[2026-03-08 17:09:46.502966]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	[55317019833417487438]	[raftRpc.AppendEntries]	epoll_ctl add succ, fd[17]
+[2026-03-08 17:09:46.502968]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:93]	[55317019833417487438]	[raftRpc.AppendEntries]	read func to yield
+[2026-03-08 17:09:46.502972]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	[55317019833417487438]	[raftRpc.AppendEntries]	epoll_ctl add succ, fd[17]
+[2026-03-08 17:09:46.502974]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:67]	[55317019833417487438]	[raftRpc.AppendEntries]	[FdEvent::delListenEvents] : delete succ
+[2026-03-08 17:09:46.502975]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:101]	[55317019833417487438]	[raftRpc.AppendEntries]	read func yield back, now to call sys read
+[2026-03-08 17:09:46.502978]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:103]	[55317019833417487438]	[raftRpc.AppendEntries]	After yield, bytes read: 0
+[2026-03-08 17:09:46.502979]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:124]	[55317019833417487438]	[raftRpc.AppendEntries]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:09:46.502983]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:127]	[55317019833417487438]	[raftRpc.AppendEntries]	read data back, fd = 17
+[2026-03-08 17:09:46.502985]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:134]	[55317019833417487438]	[raftRpc.AppendEntries]	rt <= 0
+[2026-03-08 17:09:46.502986]	[ERROR]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:135]	[55317019833417487438]	[raftRpc.AppendEntries]	read empty while occur read event, because of peer close, fd = 17, sys error = Resource temporarily unavailable, now to clear tcp connection
+[2026-03-08 17:09:46.502991]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:194]	[55317019833417487438]	[raftRpc.AppendEntries]	del succ, fd[17]
+[2026-03-08 17:09:46.503032]	[DEBUG]	[152286]	[152290]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:153]	[55317019833417487438]	[raftRpc.AppendEntries]	peer close, now yield current coroutine, wait main thread clear this TcpConnection
+[2026-03-08 17:09:54.836248]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:261]	TcpConnection [fd:17] will delete, state = 4
+[2026-03-08 17:09:54.836285]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:55]	~TcpConnection, fd = 17
+[2026-03-08 17:10:01.902556]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:10:01.902581]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:67]	[FdEvent::delListenEvents] : delete succ
+[2026-03-08 17:10:01.902584]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:273]	accept func yield back, now to call sys accept
+[2026-03-08 17:10:01.902598]	[INFO]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:80]	New client accepted succ! port:[27356
+[2026-03-08 17:10:01.902606]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/net_address.cc:36]	ip[], port[27356
+[2026-03-08 17:10:01.902612]	[INFO]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:99]	New client accepted succ! fd:[17], addr:[127.0.0.1:56426]
+[2026-03-08 17:10:01.902621]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:229]	fd 17 have exist, reset it
+[2026-03-08 17:10:01.902634]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:32]	succ create tcp connection[2], fd = 17
+[2026-03-08 17:10:01.902644]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:174]	tcp_connection address is 0x592710ce0150, and fd is 17
+[2026-03-08 17:10:01.902676]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:178]	current tcp connection count is [2]
+[2026-03-08 17:10:01.902681]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:242]	this is hook accept
+[2026-03-08 17:10:01.902685]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	fd already set o_nonblock
+[2026-03-08 17:10:01.902697]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	fd[14], register read event to epoll
+[2026-03-08 17:10:01.902699]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:10:01.902701]	[DEBUG]	[152286]	[152286]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:267]	accept func to yield
+[2026-03-08 17:10:01.902705]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection_time_wheel.cc:27]	fresh connection
+[2026-03-08 17:10:01.902719]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:117]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:10:01.902728]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:60]	this is hook read
+[2026-03-08 17:10:01.902732]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:115]	succ set o_nonblock
+[2026-03-08 17:10:01.902736]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:85]	Attempted to read immediately, bytes read: 93
+[2026-03-08 17:10:01.902738]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:87]	Read success, bytes: 93
+[2026-03-08 17:10:01.902740]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:124]	read_buffer_ size = 128, rd = 0, wd = 93
+[2026-03-08 17:10:01.902742]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:127]	read data back, fd = 17
+[2026-03-08 17:10:01.902743]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:145]	read_count > rt
+[2026-03-08 17:10:01.902745]	[INFO]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:167]	recv [93] bytes data from [127.0.0.1:56426], fd [17]
+[2026-03-08 17:10:01.902770]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:159]	parse pk_len = 93
+[2026-03-08 17:10:01.902779]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:161]	j = 92, i = 0
+[2026-03-08 17:10:01.902785]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:81]	index = 93, read_index_ = 0
+[2026-03-08 17:10:01.902786]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:87]	read_index_ = 93
+[2026-03-08 17:10:01.902788]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:184]	read_buffer_ size = 128, rd=0, wd=0
+[2026-03-08 17:10:01.902790]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:203]	msg_req_len = 20
+[2026-03-08 17:10:01.902794]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:207]	msg_req_len_index = 9
+[2026-03-08 17:10:01.902796]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:211]	msg_req = 72986300491191373522
+[2026-03-08 17:10:01.902797]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:220]	service_name_len_index = 29
+[2026-03-08 17:10:01.902798]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:231]	service_name_len = 21
+[2026-03-08 17:10:01.902800]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:237]	service_name = raftRpc.AppendEntries
+[2026-03-08 17:10:01.902801]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:250]	err_info_len = 0
+[2026-03-08 17:10:01.902805]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:262]	pb_data_len = 26, pb_index = 62
+[2026-03-08 17:10:01.902808]	[INFO]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:24]	[72986300491191373522]	begin to dispatch client tinypb request, msgno = 72986300491191373522
+[2026-03-08 17:10:01.902810]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:133]	[72986300491191373522]	service_name = raftRpc
+[2026-03-08 17:10:01.902812]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:135]	[72986300491191373522]	method_name = AppendEntries
+[2026-03-08 17:10:01.902818]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:69]	[72986300491191373522]	[raftRpc.AppendEntries]	72986300491191373522|request.name = AppendEntriesRequest
+[2026-03-08 17:10:01.902823]	[INFO]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:80]	[72986300491191373522]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:10:01.902824]	[INFO]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:81]	[72986300491191373522]	[raftRpc.AppendEntries]	72986300491191373522|Get client request data:term: 10086 leader_id: 8848 entries { command: "append logs" log_term: 3 log_index: 666 }
+[2026-03-08 17:10:01.902839]	[INFO]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:82]	[72986300491191373522]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:10:01.902841]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:86]	[72986300491191373522]	[raftRpc.AppendEntries]	72986300491191373522|response.name = AppendEntriesResponse
+[2026-03-08 17:10:01.902842]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection_time_wheel.cc:27]	fresh connection
+[2026-03-08 17:10:01.902847]	[INFO]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:98]	[72986300491191373522]	[raftRpc.AppendEntries]	Call [raftRpc.AppendEntries] succ, now send reply package
+[2026-03-08 17:10:01.902975]	[INFO]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:107]	[72986300491191373522]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:10:01.902980]	[INFO]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:108]	[72986300491191373522]	[raftRpc.AppendEntries]	72986300491191373522|Set server response data:success: true info: "skip the call_rpc_interface, the size of entries is 1"
+[2026-03-08 17:10:01.902991]	[INFO]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:109]	[72986300491191373522]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:10:01.902997]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:67]	[72986300491191373522]	[raftRpc.AppendEntries]	encode pk_len = 124
+[2026-03-08 17:10:01.903000]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:79]	[72986300491191373522]	[raftRpc.AppendEntries]	msg_req_len = 20
+[2026-03-08 17:10:01.903004]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:90]	[72986300491191373522]	[raftRpc.AppendEntries]	src service_full_name_len = 21
+[2026-03-08 17:10:01.903007]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:101]	[72986300491191373522]	[raftRpc.AppendEntries]	err_code = 0
+[2026-03-08 17:10:01.903011]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:107]	[72986300491191373522]	[raftRpc.AppendEntries]	err_info_len = 0
+[2026-03-08 17:10:01.903014]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:119]	[72986300491191373522]	[raftRpc.AppendEntries]	pb_data_len = 57
+[2026-03-08 17:10:01.903018]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:39]	[72986300491191373522]	[raftRpc.AppendEntries]	encode package len = 124
+[2026-03-08 17:10:01.903021]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:42]	[72986300491191373522]	[raftRpc.AppendEntries]	succ encode and write to buffer, write_index = 124
+[2026-03-08 17:10:01.903039]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:139]	[72986300491191373522]	[raftRpc.AppendEntries]	this is hook write
+[2026-03-08 17:10:01.903046]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	[72986300491191373522]	[raftRpc.AppendEntries]	fd already set o_nonblock
+[2026-03-08 17:10:01.903135]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:230]	[72986300491191373522]	[raftRpc.AppendEntries]	succ write 124 bytes
+[2026-03-08 17:10:01.903142]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:81]	[72986300491191373522]	[raftRpc.AppendEntries]	index = 124, read_index_ = 0
+[2026-03-08 17:10:01.903157]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:87]	[72986300491191373522]	[raftRpc.AppendEntries]	read_index_ = 124
+[2026-03-08 17:10:01.903160]	[INFO]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:233]	[72986300491191373522]	[raftRpc.AppendEntries]	send all data, now unregister write event and break
+[2026-03-08 17:10:01.903163]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:117]	[72986300491191373522]	[raftRpc.AppendEntries]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:10:01.903166]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:60]	[72986300491191373522]	[raftRpc.AppendEntries]	this is hook read
+[2026-03-08 17:10:01.903169]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	[72986300491191373522]	[raftRpc.AppendEntries]	fd already set o_nonblock
+[2026-03-08 17:10:01.903174]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:85]	[72986300491191373522]	[raftRpc.AppendEntries]	Attempted to read immediately, bytes read: -1
+[2026-03-08 17:10:01.903176]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	[72986300491191373522]	[raftRpc.AppendEntries]	fd[17], register read event to epoll
+[2026-03-08 17:10:01.903184]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	[72986300491191373522]	[raftRpc.AppendEntries]	epoll_ctl add succ, fd[17]
+[2026-03-08 17:10:01.903186]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:93]	[72986300491191373522]	[raftRpc.AppendEntries]	read func to yield
+[2026-03-08 17:10:01.903250]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	[72986300491191373522]	[raftRpc.AppendEntries]	epoll_ctl add succ, fd[17]
+[2026-03-08 17:10:01.903257]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:67]	[72986300491191373522]	[raftRpc.AppendEntries]	[FdEvent::delListenEvents] : delete succ
+[2026-03-08 17:10:01.903259]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:101]	[72986300491191373522]	[raftRpc.AppendEntries]	read func yield back, now to call sys read
+[2026-03-08 17:10:01.903265]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:103]	[72986300491191373522]	[raftRpc.AppendEntries]	After yield, bytes read: 0
+[2026-03-08 17:10:01.903267]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:124]	[72986300491191373522]	[raftRpc.AppendEntries]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:10:01.903270]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:127]	[72986300491191373522]	[raftRpc.AppendEntries]	read data back, fd = 17
+[2026-03-08 17:10:01.903272]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:134]	[72986300491191373522]	[raftRpc.AppendEntries]	rt <= 0
+[2026-03-08 17:10:01.903274]	[ERROR]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:135]	[72986300491191373522]	[raftRpc.AppendEntries]	read empty while occur read event, because of peer close, fd = 17, sys error = Resource temporarily unavailable, now to clear tcp connection
+[2026-03-08 17:10:01.903281]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:194]	[72986300491191373522]	[raftRpc.AppendEntries]	del succ, fd[17]
+[2026-03-08 17:10:01.903322]	[DEBUG]	[152286]	[152291]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:153]	[72986300491191373522]	[raftRpc.AppendEntries]	peer close, now yield current coroutine, wait main thread clear this TcpConnection
+[2026-03-08 17:10:04.843950]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:261]	TcpConnection [fd:17] will delete, state = 4
+[2026-03-08 17:10:04.843984]	[DEBUG]	[152286]	[152286]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:55]	~TcpConnection, fd = 17
+[2026-03-08 17:28:49.459185]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/net_address.cc:32]	create upv4 address succ [127.0.0.1:12345]
+[2026-03-08 17:28:49.544656]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:29]	semaphore begin to wait until new thread finish IOThread::main() to init
+[2026-03-08 17:28:49.544821]	[DEBUG]	[164221]	[164225]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[164225] succ create a reactor
+[2026-03-08 17:28:49.544883]	[DEBUG]	[164221]	[164225]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 3
+[2026-03-08 17:28:49.544895]	[DEBUG]	[164221]	[164225]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 4
+[2026-03-08 17:28:49.544909]	[DEBUG]	[164221]	[164225]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:78]	finish iothread init, now post semaphore
+[2026-03-08 17:28:49.544943]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:33]	semaphore wait end, finish create io thread
+[2026-03-08 17:28:49.545111]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:29]	semaphore begin to wait until new thread finish IOThread::main() to init
+[2026-03-08 17:28:49.545246]	[DEBUG]	[164221]	[164226]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[164226] succ create a reactor
+[2026-03-08 17:28:49.545281]	[DEBUG]	[164221]	[164226]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 5
+[2026-03-08 17:28:49.545291]	[DEBUG]	[164221]	[164226]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 6
+[2026-03-08 17:28:49.545301]	[DEBUG]	[164221]	[164226]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:78]	finish iothread init, now post semaphore
+[2026-03-08 17:28:49.545361]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:33]	semaphore wait end, finish create io thread
+[2026-03-08 17:28:49.545449]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:29]	semaphore begin to wait until new thread finish IOThread::main() to init
+[2026-03-08 17:28:49.545583]	[DEBUG]	[164221]	[164227]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[164227] succ create a reactor
+[2026-03-08 17:28:49.545618]	[DEBUG]	[164221]	[164227]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 7
+[2026-03-08 17:28:49.545628]	[DEBUG]	[164221]	[164227]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 8
+[2026-03-08 17:28:49.545638]	[DEBUG]	[164221]	[164227]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:78]	finish iothread init, now post semaphore
+[2026-03-08 17:28:49.545699]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:33]	semaphore wait end, finish create io thread
+[2026-03-08 17:28:49.545782]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:29]	semaphore begin to wait until new thread finish IOThread::main() to init
+[2026-03-08 17:28:49.545917]	[DEBUG]	[164221]	[164228]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[164228] succ create a reactor
+[2026-03-08 17:28:49.545965]	[DEBUG]	[164221]	[164228]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 9
+[2026-03-08 17:28:49.545976]	[DEBUG]	[164221]	[164228]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 10
+[2026-03-08 17:28:49.545989]	[DEBUG]	[164221]	[164228]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:78]	finish iothread init, now post semaphore
+[2026-03-08 17:28:49.546076]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:33]	semaphore wait end, finish create io thread
+[2026-03-08 17:28:49.546097]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:66]	create new Reacctor
+[2026-03-08 17:28:49.546102]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:32]	thread[164221] succ create a reactor
+[2026-03-08 17:28:49.546116]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:40]	epfd_ = 11
+[2026-03-08 17:28:49.546125]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:48]	[Reactor::Reactor] : wakefd = 12
+[2026-03-08 17:28:49.546153]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.h:49]	timeevent will occur at 1772962139546
+[2026-03-08 17:28:49.546178]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.cc:42]	m_timer fd = 13
+[2026-03-08 17:28:49.546183]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[13]
+[2026-03-08 17:28:49.546187]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.cc:73]	need reset timer
+[2026-03-08 17:28:49.546192]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.h:49]	timeevent will occur at 1772962139546
+[2026-03-08 17:28:49.546194]	[INFO]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:132]	TcpServer setup on [127.0.0.1:12345]
+[2026-03-08 17:28:49.546202]	[INFO]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/comm/config.cc:327]	read config from file [../conf/raft_rpc_service.xml]: [log_path: ../log/], [log_prefix: raft_rpc_service], [log_max_size: 5 MB], [log_level: DEBUG], [coroutine_stack_size: 256 KB], [coroutine_pool_size: 1000], [msg_req_len: 20], [max_connect_timeout: 75 s], [iothread_num: 4], [timewheel_bucket_num: 6], [timewheel_interval: 10 s], [server_ip: 127.0.0.1], [server_Port: 12345], [server_protocol: TINYPB]
+
+[2026-03-08 17:28:49.546306]	[INFO]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:142]	succ register service[raftRpc]
+[2026-03-08 17:28:49.546309]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.h:49]	timeevent will occur at 1772962130046
+[2026-03-08 17:28:49.546311]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/timer.cc:73]	need reset timer
+[2026-03-08 17:28:49.546330]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:32]	create listenfd succ, listenfd = 14
+[2026-03-08 17:28:49.546412]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:48]	set REUSEADDR succ
+[2026-03-08 17:28:49.546433]	[INFO]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/memory.cc:15]	succ mmap 262144000bytes memory
+[2026-03-08 17:28:49.571988]	[INFO]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:145]	resume accept coroutine
+[2026-03-08 17:28:49.572005]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:242]	this is hook accept
+[2026-03-08 17:28:49.572345]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:115]	succ set o_nonblock
+[2026-03-08 17:28:49.572370]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	fd[14], register read event to epoll
+[2026-03-08 17:28:49.572377]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:28:49.572381]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:267]	accept func to yield
+[2026-03-08 17:28:49.572454]	[DEBUG]	[164221]	[164225]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:86]	IOThread 164225 begin to loop
+[2026-03-08 17:28:49.572496]	[DEBUG]	[164221]	[164226]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:86]	IOThread 164226 begin to loop
+[2026-03-08 17:28:49.572517]	[DEBUG]	[164221]	[164227]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:86]	IOThread 164227 begin to loop
+[2026-03-08 17:28:49.572524]	[DEBUG]	[164221]	[164228]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/io_thread.cc:86]	IOThread 164228 begin to loop
+[2026-03-08 17:29:04.206818]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:29:04.206850]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:67]	[FdEvent::delListenEvents] : delete succ
+[2026-03-08 17:29:04.206858]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:273]	accept func yield back, now to call sys accept
+[2026-03-08 17:29:04.206887]	[INFO]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:80]	New client accepted succ! port:[28305
+[2026-03-08 17:29:04.206899]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/net_address.cc:36]	ip[], port[28305
+[2026-03-08 17:29:04.206908]	[INFO]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:99]	New client accepted succ! fd:[17], addr:[127.0.0.1:37230]
+[2026-03-08 17:29:04.206920]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:233]	fd 17 did't exist, new it
+[2026-03-08 17:29:04.206940]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:32]	succ create tcp connection[2], fd = 17
+[2026-03-08 17:29:04.206959]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:174]	tcp_connection address is 0x55f3d8a3a4d0, and fd is 17
+[2026-03-08 17:29:04.207015]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:178]	current tcp connection count is [1]
+[2026-03-08 17:29:04.207027]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:242]	this is hook accept
+[2026-03-08 17:29:04.207036]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	fd already set o_nonblock
+[2026-03-08 17:29:04.207064]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	fd[14], register read event to epoll
+[2026-03-08 17:29:04.207075]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:29:04.207079]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:267]	accept func to yield
+[2026-03-08 17:29:04.207087]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection_time_wheel.cc:27]	fresh connection
+[2026-03-08 17:29:04.207114]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:117]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:29:04.207152]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:60]	this is hook read
+[2026-03-08 17:29:04.207164]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:115]	succ set o_nonblock
+[2026-03-08 17:29:04.207186]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:85]	Attempted to read immediately, bytes read: 93
+[2026-03-08 17:29:04.207190]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:87]	Read success, bytes: 93
+[2026-03-08 17:29:04.207195]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:124]	read_buffer_ size = 128, rd = 0, wd = 93
+[2026-03-08 17:29:04.207199]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:127]	read data back, fd = 17
+[2026-03-08 17:29:04.207203]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:145]	read_count > rt
+[2026-03-08 17:29:04.207206]	[INFO]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:167]	recv [93] bytes data from [127.0.0.1:37230], fd [17]
+[2026-03-08 17:29:04.207286]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:159]	parse pk_len = 93
+[2026-03-08 17:29:04.207309]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:161]	j = 92, i = 0
+[2026-03-08 17:29:04.207308]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection_time_wheel.cc:27]	fresh connection
+[2026-03-08 17:29:04.207318]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:81]	index = 93, read_index_ = 0
+[2026-03-08 17:29:04.207323]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:87]	read_index_ = 93
+[2026-03-08 17:29:04.207328]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:184]	read_buffer_ size = 128, rd=0, wd=0
+[2026-03-08 17:29:04.207333]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:203]	msg_req_len = 20
+[2026-03-08 17:29:04.207337]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:207]	msg_req_len_index = 9
+[2026-03-08 17:29:04.207355]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:211]	msg_req = 47550561782975120836
+[2026-03-08 17:29:04.207359]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:220]	service_name_len_index = 29
+[2026-03-08 17:29:04.207362]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:231]	service_name_len = 21
+[2026-03-08 17:29:04.207366]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:237]	service_name = raftRpc.AppendEntries
+[2026-03-08 17:29:04.207369]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:250]	err_info_len = 0
+[2026-03-08 17:29:04.207373]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:262]	pb_data_len = 26, pb_index = 62
+[2026-03-08 17:29:04.207379]	[INFO]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:24]	[47550561782975120836]	begin to dispatch client tinypb request, msgno = 47550561782975120836
+[2026-03-08 17:29:04.207386]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:133]	[47550561782975120836]	service_name = raftRpc
+[2026-03-08 17:29:04.207390]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:135]	[47550561782975120836]	method_name = AppendEntries
+[2026-03-08 17:29:04.207402]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:69]	[47550561782975120836]	[raftRpc.AppendEntries]	47550561782975120836|request.name = AppendEntriesRequest
+[2026-03-08 17:29:04.207417]	[INFO]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:80]	[47550561782975120836]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:29:04.207421]	[INFO]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:81]	[47550561782975120836]	[raftRpc.AppendEntries]	47550561782975120836|Get client request data:term: 10086 leader_id: 8848 entries { command: "append logs" log_term: 3 log_index: 666 }
+[2026-03-08 17:29:04.207459]	[INFO]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:82]	[47550561782975120836]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:29:04.207463]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:86]	[47550561782975120836]	[raftRpc.AppendEntries]	47550561782975120836|response.name = AppendEntriesResponse
+[2026-03-08 17:29:04.207472]	[INFO]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:98]	[47550561782975120836]	[raftRpc.AppendEntries]	Call [raftRpc.AppendEntries] succ, now send reply package
+[2026-03-08 17:29:04.207478]	[INFO]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:107]	[47550561782975120836]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:29:04.207482]	[INFO]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:108]	[47550561782975120836]	[raftRpc.AppendEntries]	47550561782975120836|Set server response data:success: true info: "skip the call_rpc_interface, the size of entries is 1, and the time_str is abcd"
+[2026-03-08 17:29:04.207489]	[INFO]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:109]	[47550561782975120836]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:29:04.207494]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:67]	[47550561782975120836]	[raftRpc.AppendEntries]	encode pk_len = 150
+[2026-03-08 17:29:04.207504]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:79]	[47550561782975120836]	[raftRpc.AppendEntries]	msg_req_len = 20
+[2026-03-08 17:29:04.207508]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:90]	[47550561782975120836]	[raftRpc.AppendEntries]	src service_full_name_len = 21
+[2026-03-08 17:29:04.207512]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:101]	[47550561782975120836]	[raftRpc.AppendEntries]	err_code = 0
+[2026-03-08 17:29:04.207515]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:107]	[47550561782975120836]	[raftRpc.AppendEntries]	err_info_len = 0
+[2026-03-08 17:29:04.207519]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:119]	[47550561782975120836]	[raftRpc.AppendEntries]	pb_data_len = 83
+[2026-03-08 17:29:04.207523]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:39]	[47550561782975120836]	[raftRpc.AppendEntries]	encode package len = 150
+[2026-03-08 17:29:04.207527]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:42]	[47550561782975120836]	[raftRpc.AppendEntries]	succ encode and write to buffer, write_index = 150
+[2026-03-08 17:29:04.207535]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:139]	[47550561782975120836]	[raftRpc.AppendEntries]	this is hook write
+[2026-03-08 17:29:04.207541]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	[47550561782975120836]	[raftRpc.AppendEntries]	fd already set o_nonblock
+[2026-03-08 17:29:04.207644]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:230]	[47550561782975120836]	[raftRpc.AppendEntries]	succ write 150 bytes
+[2026-03-08 17:29:04.207649]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:81]	[47550561782975120836]	[raftRpc.AppendEntries]	index = 150, read_index_ = 0
+[2026-03-08 17:29:04.207651]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:87]	[47550561782975120836]	[raftRpc.AppendEntries]	read_index_ = 150
+[2026-03-08 17:29:04.207653]	[INFO]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:233]	[47550561782975120836]	[raftRpc.AppendEntries]	send all data, now unregister write event and break
+[2026-03-08 17:29:04.207664]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:117]	[47550561782975120836]	[raftRpc.AppendEntries]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:29:04.207667]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:60]	[47550561782975120836]	[raftRpc.AppendEntries]	this is hook read
+[2026-03-08 17:29:04.207669]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	[47550561782975120836]	[raftRpc.AppendEntries]	fd already set o_nonblock
+[2026-03-08 17:29:04.207673]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:85]	[47550561782975120836]	[raftRpc.AppendEntries]	Attempted to read immediately, bytes read: 0
+[2026-03-08 17:29:04.207675]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	[47550561782975120836]	[raftRpc.AppendEntries]	fd[17], register read event to epoll
+[2026-03-08 17:29:04.207682]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	[47550561782975120836]	[raftRpc.AppendEntries]	epoll_ctl add succ, fd[17]
+[2026-03-08 17:29:04.207684]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:93]	[47550561782975120836]	[raftRpc.AppendEntries]	read func to yield
+[2026-03-08 17:29:04.207689]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	[47550561782975120836]	[raftRpc.AppendEntries]	epoll_ctl add succ, fd[17]
+[2026-03-08 17:29:04.207690]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:67]	[47550561782975120836]	[raftRpc.AppendEntries]	[FdEvent::delListenEvents] : delete succ
+[2026-03-08 17:29:04.207691]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:101]	[47550561782975120836]	[raftRpc.AppendEntries]	read func yield back, now to call sys read
+[2026-03-08 17:29:04.207697]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:103]	[47550561782975120836]	[raftRpc.AppendEntries]	After yield, bytes read: 0
+[2026-03-08 17:29:04.207698]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:124]	[47550561782975120836]	[raftRpc.AppendEntries]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:29:04.207700]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:127]	[47550561782975120836]	[raftRpc.AppendEntries]	read data back, fd = 17
+[2026-03-08 17:29:04.207701]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:134]	[47550561782975120836]	[raftRpc.AppendEntries]	rt <= 0
+[2026-03-08 17:29:04.207703]	[ERROR]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:135]	[47550561782975120836]	[raftRpc.AppendEntries]	read empty while occur read event, because of peer close, fd = 17, sys error = Resource temporarily unavailable, now to clear tcp connection
+[2026-03-08 17:29:04.207708]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:194]	[47550561782975120836]	[raftRpc.AppendEntries]	del succ, fd[17]
+[2026-03-08 17:29:04.207748]	[DEBUG]	[164221]	[164225]	[2]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:153]	[47550561782975120836]	[raftRpc.AppendEntries]	peer close, now yield current coroutine, wait main thread clear this TcpConnection
+[2026-03-08 17:29:07.18239]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:29:07.18267]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:67]	[FdEvent::delListenEvents] : delete succ
+[2026-03-08 17:29:07.18272]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:273]	accept func yield back, now to call sys accept
+[2026-03-08 17:29:07.18300]	[INFO]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:80]	New client accepted succ! port:[21163
+[2026-03-08 17:29:07.18308]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/net_address.cc:36]	ip[], port[21163
+[2026-03-08 17:29:07.18316]	[INFO]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:99]	New client accepted succ! fd:[17], addr:[127.0.0.1:43858]
+[2026-03-08 17:29:07.18331]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:55]	~TcpConnection, fd = 17
+[2026-03-08 17:29:07.18340]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:229]	fd 17 have exist, reset it
+[2026-03-08 17:29:07.18355]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:32]	succ create tcp connection[2], fd = 17
+[2026-03-08 17:29:07.18370]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:174]	tcp_connection address is 0x55f3d8a3a7a0, and fd is 17
+[2026-03-08 17:29:07.18424]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:178]	current tcp connection count is [2]
+[2026-03-08 17:29:07.18436]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:242]	this is hook accept
+[2026-03-08 17:29:07.18444]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	fd already set o_nonblock
+[2026-03-08 17:29:07.18469]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	fd[14], register read event to epoll
+[2026-03-08 17:29:07.18475]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	epoll_ctl add succ, fd[14]
+[2026-03-08 17:29:07.18462]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:117]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:29:07.18479]	[DEBUG]	[164221]	[164221]	[1]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:267]	accept func to yield
+[2026-03-08 17:29:07.18481]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:60]	this is hook read
+[2026-03-08 17:29:07.18484]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection_time_wheel.cc:27]	fresh connection
+[2026-03-08 17:29:07.18488]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:115]	succ set o_nonblock
+[2026-03-08 17:29:07.18495]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:85]	Attempted to read immediately, bytes read: 93
+[2026-03-08 17:29:07.18497]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:87]	Read success, bytes: 93
+[2026-03-08 17:29:07.18499]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:124]	read_buffer_ size = 128, rd = 0, wd = 93
+[2026-03-08 17:29:07.18500]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:127]	read data back, fd = 17
+[2026-03-08 17:29:07.18502]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:145]	read_count > rt
+[2026-03-08 17:29:07.18503]	[INFO]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:167]	recv [93] bytes data from [127.0.0.1:43858], fd [17]
+[2026-03-08 17:29:07.18516]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:159]	parse pk_len = 93
+[2026-03-08 17:29:07.18520]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:161]	j = 92, i = 0
+[2026-03-08 17:29:07.18524]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:81]	index = 93, read_index_ = 0
+[2026-03-08 17:29:07.18526]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:87]	read_index_ = 93
+[2026-03-08 17:29:07.18528]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:184]	read_buffer_ size = 128, rd=0, wd=0
+[2026-03-08 17:29:07.18528]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection_time_wheel.cc:27]	fresh connection
+[2026-03-08 17:29:07.18533]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:203]	msg_req_len = 20
+[2026-03-08 17:29:07.18535]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:207]	msg_req_len_index = 9
+[2026-03-08 17:29:07.18537]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:211]	msg_req = 58598871270018312905
+[2026-03-08 17:29:07.18538]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:220]	service_name_len_index = 29
+[2026-03-08 17:29:07.18539]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:231]	service_name_len = 21
+[2026-03-08 17:29:07.18541]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:237]	service_name = raftRpc.AppendEntries
+[2026-03-08 17:29:07.18542]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:250]	err_info_len = 0
+[2026-03-08 17:29:07.18544]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:262]	pb_data_len = 26, pb_index = 62
+[2026-03-08 17:29:07.18546]	[INFO]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:24]	[58598871270018312905]	begin to dispatch client tinypb request, msgno = 58598871270018312905
+[2026-03-08 17:29:07.18549]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:133]	[58598871270018312905]	service_name = raftRpc
+[2026-03-08 17:29:07.18550]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:135]	[58598871270018312905]	method_name = AppendEntries
+[2026-03-08 17:29:07.18557]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:69]	[58598871270018312905]	[raftRpc.AppendEntries]	58598871270018312905|request.name = AppendEntriesRequest
+[2026-03-08 17:29:07.18564]	[INFO]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:80]	[58598871270018312905]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:29:07.18566]	[INFO]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:81]	[58598871270018312905]	[raftRpc.AppendEntries]	58598871270018312905|Get client request data:term: 10086 leader_id: 8848 entries { command: "append logs" log_term: 3 log_index: 666 }
+[2026-03-08 17:29:07.18580]	[INFO]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:82]	[58598871270018312905]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:29:07.18596]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:86]	[58598871270018312905]	[raftRpc.AppendEntries]	58598871270018312905|response.name = AppendEntriesResponse
+[2026-03-08 17:29:07.18601]	[INFO]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:98]	[58598871270018312905]	[raftRpc.AppendEntries]	Call [raftRpc.AppendEntries] succ, now send reply package
+[2026-03-08 17:29:07.18604]	[INFO]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:107]	[58598871270018312905]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:29:07.18606]	[INFO]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:108]	[58598871270018312905]	[raftRpc.AppendEntries]	58598871270018312905|Set server response data:success: true info: "skip the call_rpc_interface, the size of entries is 1, and the time_str is abcd"
+[2026-03-08 17:29:07.18609]	[INFO]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_rpc_dispatcher.cc:109]	[58598871270018312905]	[raftRpc.AppendEntries]	============================================================
+[2026-03-08 17:29:07.18614]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:67]	[58598871270018312905]	[raftRpc.AppendEntries]	encode pk_len = 150
+[2026-03-08 17:29:07.18615]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:79]	[58598871270018312905]	[raftRpc.AppendEntries]	msg_req_len = 20
+[2026-03-08 17:29:07.18616]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:90]	[58598871270018312905]	[raftRpc.AppendEntries]	src service_full_name_len = 21
+[2026-03-08 17:29:07.18618]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:101]	[58598871270018312905]	[raftRpc.AppendEntries]	err_code = 0
+[2026-03-08 17:29:07.18619]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:107]	[58598871270018312905]	[raftRpc.AppendEntries]	err_info_len = 0
+[2026-03-08 17:29:07.18620]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:119]	[58598871270018312905]	[raftRpc.AppendEntries]	pb_data_len = 83
+[2026-03-08 17:29:07.18622]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:39]	[58598871270018312905]	[raftRpc.AppendEntries]	encode package len = 150
+[2026-03-08 17:29:07.18624]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tinypb/tinypb_codec.cc:42]	[58598871270018312905]	[raftRpc.AppendEntries]	succ encode and write to buffer, write_index = 150
+[2026-03-08 17:29:07.18627]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:139]	[58598871270018312905]	[raftRpc.AppendEntries]	this is hook write
+[2026-03-08 17:29:07.18629]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	[58598871270018312905]	[raftRpc.AppendEntries]	fd already set o_nonblock
+[2026-03-08 17:29:07.18675]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:230]	[58598871270018312905]	[raftRpc.AppendEntries]	succ write 150 bytes
+[2026-03-08 17:29:07.18681]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:81]	[58598871270018312905]	[raftRpc.AppendEntries]	index = 150, read_index_ = 0
+[2026-03-08 17:29:07.18683]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_buffer.cc:87]	[58598871270018312905]	[raftRpc.AppendEntries]	read_index_ = 150
+[2026-03-08 17:29:07.18685]	[INFO]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:233]	[58598871270018312905]	[raftRpc.AppendEntries]	send all data, now unregister write event and break
+[2026-03-08 17:29:07.18687]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:117]	[58598871270018312905]	[raftRpc.AppendEntries]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:29:07.18694]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:60]	[58598871270018312905]	[raftRpc.AppendEntries]	this is hook read
+[2026-03-08 17:29:07.18696]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:108]	[58598871270018312905]	[raftRpc.AppendEntries]	fd already set o_nonblock
+[2026-03-08 17:29:07.18699]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:85]	[58598871270018312905]	[raftRpc.AppendEntries]	Attempted to read immediately, bytes read: -1
+[2026-03-08 17:29:07.18701]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:48]	[58598871270018312905]	[raftRpc.AppendEntries]	fd[17], register read event to epoll
+[2026-03-08 17:29:07.18708]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	[58598871270018312905]	[raftRpc.AppendEntries]	epoll_ctl add succ, fd[17]
+[2026-03-08 17:29:07.18710]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:93]	[58598871270018312905]	[raftRpc.AppendEntries]	read func to yield
+[2026-03-08 17:29:07.18838]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:172]	[58598871270018312905]	[raftRpc.AppendEntries]	epoll_ctl add succ, fd[17]
+[2026-03-08 17:29:07.18845]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/fd_event.cc:67]	[58598871270018312905]	[raftRpc.AppendEntries]	[FdEvent::delListenEvents] : delete succ
+[2026-03-08 17:29:07.18847]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:101]	[58598871270018312905]	[raftRpc.AppendEntries]	read func yield back, now to call sys read
+[2026-03-08 17:29:07.18852]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/coroutine/coroutine_hook.cc:103]	[58598871270018312905]	[raftRpc.AppendEntries]	After yield, bytes read: 0
+[2026-03-08 17:29:07.18854]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:124]	[58598871270018312905]	[raftRpc.AppendEntries]	read_buffer_ size = 128, rd = 0, wd = 0
+[2026-03-08 17:29:07.18856]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:127]	[58598871270018312905]	[raftRpc.AppendEntries]	read data back, fd = 17
+[2026-03-08 17:29:07.18858]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:134]	[58598871270018312905]	[raftRpc.AppendEntries]	rt <= 0
+[2026-03-08 17:29:07.18859]	[ERROR]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:135]	[58598871270018312905]	[raftRpc.AppendEntries]	read empty while occur read event, because of peer close, fd = 17, sys error = Resource temporarily unavailable, now to clear tcp connection
+[2026-03-08 17:29:07.18864]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/comm/reactor.cc:194]	[58598871270018312905]	[raftRpc.AppendEntries]	del succ, fd[17]
+[2026-03-08 17:29:07.18902]	[DEBUG]	[164221]	[164226]	[3]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:153]	[58598871270018312905]	[raftRpc.AppendEntries]	peer close, now yield current coroutine, wait main thread clear this TcpConnection
+[2026-03-08 17:29:09.568293]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_server.cc:261]	TcpConnection [fd:17] will delete, state = 4
+[2026-03-08 17:29:09.568338]	[DEBUG]	[164221]	[164221]	[0]	[/home/knight/cpp/TinyRPC_series/tinyrpc_v3/tinyrpc/net/tcp/tcp_connection.cc:55]	~TcpConnection, fd = 17

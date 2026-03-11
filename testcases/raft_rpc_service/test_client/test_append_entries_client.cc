@@ -41,20 +41,17 @@ void test_client() {
     entry->set_log_term(3);
     entry->set_log_index(666);
 
-    std::cout << "Send to tinyrpc server " << addr->toString() << ", request body: [" << rpc_req.ShortDebugString()
-              << "]" << std::endl;
+    std::cout << "[test_client] : Send to tinyrpc server " << addr->toString() << ", request body: ["
+              << rpc_req.ShortDebugString() << "]" << std::endl;
     stub.AppendEntries(&rpc_controller, &rpc_req, &rpc_res, NULL);
 
     if (rpc_controller.ErrorCode() != 0) {
-        std::cout << "Failed to call tinyrpc server, error code: " << rpc_controller.ErrorCode()
+        std::cout << "[test_client] : Failed to call tinyrpc server, error code: " << rpc_controller.ErrorCode()
                   << ", error info: " << rpc_controller.ErrorText() << std::endl;
         return;
     }
 
-    std::cout << "Success get response from tinyrpc server " << addr->toString() << ", rpc_res.info: ["
-              << rpc_res.info() << "]" << std::endl;
-
-    std::cout << "Success get response from tinyrpc server " << addr->toString() << ", response body: ["
+    std::cout << "[test_client] : Success get response from tinyrpc server " << addr->toString() << ", response body: ["
               << rpc_res.ShortDebugString() << "]" << std::endl;
 }
 
